@@ -79,34 +79,21 @@ const HowItWorksSection = () => {
           >
             <div className="flex justify-center">
               <div className="flex items-center bg-gradient-to-r from-purple-50 to-white p-2 sm:p-3 rounded-lg border border-purple-100 shadow-md">
-                <div className="relative mr-2">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-violet-500 to-purple-400 rounded-full blur-[1px]"></div>
-                  <Fingerprint className="text-xl sm:text-2xl relative z-10 text-transparent bg-clip-text bg-gradient-to-br from-purple-600 via-violet-500 to-purple-400" />
-                </div>
+                <Fingerprint className="text-xl sm:text-2xl text-purple-600 mr-2" />
                 <span className="text-xs sm:text-sm font-semibold text-violet-600">or</span>
-                <div className="relative ml-2">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-violet-500 to-purple-400 rounded-full blur-[1px]"></div>
-                  <svg
-                    className="h-5 w-5 sm:h-6 sm:w-6 relative z-10"
-                    fill="none"
-                    stroke="url(#eye-gradient)"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <defs>
-                      <linearGradient id="eye-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#9945FF" />
-                        <stop offset="50%" stopColor="#8A5CF6" />
-                        <stop offset="100%" stopColor="#9945FF" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
-                </div>
+                <svg
+                  className="h-5 w-5 sm:h-6 sm:w-6 ml-2 text-purple-600"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
               </div>
             </div>
           </Step>

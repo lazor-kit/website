@@ -87,10 +87,7 @@ const HeroSection = () => {
                     repeatType: "reverse"
                   }}
                 >
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-violet-500 to-purple-400 rounded-full blur-[1px]"></div>
-                    <Fingerprint className="h-6 w-6 sm:h-8 sm:w-8 relative z-10 text-transparent bg-clip-text bg-gradient-to-br from-purple-600 via-violet-500 to-purple-400" />
-                  </div>
+                  <Fingerprint className="h-6 w-6 sm:h-8 sm:w-8 text-purple-600" />
                 </motion.div>
                 {/* Code representation */}
                 <div className="w-full overflow-x-auto">
