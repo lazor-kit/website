@@ -58,9 +58,17 @@ const DemoSection = () => {
                     <Fingerprint className="h-8 w-8 text-purple-600" />
                   </div>
                   
-                  <p className="text-sm text-neutral-500 mb-6 text-center">
+                  <p className="text-sm text-neutral-500 mb-4 text-center">
                     Click the button below to simulate our fast, secure authentication process
                   </p>
+                  
+                  <div className="mb-6 w-full overflow-x-auto rounded-lg">
+                    <CodeBlock className="text-xs shadow-lg" withTerminal fileName="quick-auth.js" showLineNumbers>
+{`// One-line authentication with Lazor.kit
+const wallet = await lazorKit.signIn();
+console.log("Wallet ready:", wallet.address);`}
+                    </CodeBlock>
+                  </div>
                   
                   <Button 
                     onClick={handleAuthenticate}

@@ -91,7 +91,7 @@ const HeroSection = () => {
                 </motion.div>
                 {/* Code representation */}
                 <div className="w-full overflow-x-auto">
-                  <CodeBlock withTerminal fileName="authentication.js" showLineNumbers>
+                  <CodeBlock className="shadow-lg" withTerminal fileName="authentication.js" showLineNumbers>
 {`// Easy authentication with Lazor.kit
 const userWallet = await lazorKit.signIn();
 console.log("Authenticated!", userWallet.address);`}
