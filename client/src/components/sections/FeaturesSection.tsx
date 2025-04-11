@@ -23,7 +23,7 @@ const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCardProps) 
     transition={{ duration: 0.5, delay }}
     viewport={{ once: true }}
   >
-    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4 shadow-sm">
       {icon}
     </div>
     <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{title}</h3>
@@ -34,32 +34,32 @@ const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCardProps) 
 const FeaturesSection = () => {
   const features = [
     {
-      icon: <Fingerprint className="text-accent text-lg sm:text-xl" />,
+      icon: <Fingerprint className="text-purple-600 text-lg sm:text-xl" />,
       title: "Passkey Authentication",
       description: "Use FaceID or fingerprint biometrics for secure, passwordless authentication with no wallet applications needed."
     },
     {
-      icon: <ShieldCheck className="text-accent text-lg sm:text-xl" />,
+      icon: <ShieldCheck className="text-indigo-600 text-lg sm:text-xl" />,
       title: "Secp256r1 Native Program",
       description: "Built on secure standards used by major financial institutions, ensuring enterprise-grade security for your applications."
     },
     {
-      icon: <Zap className="text-accent text-lg sm:text-xl" />,
+      icon: <Zap className="text-violet-600 text-lg sm:text-xl" />,
       title: "Lightning Fast",
       description: "Authentication in milliseconds without the usual wallet connection delays or approval popups."
     },
     {
-      icon: <Code className="text-accent text-lg sm:text-xl" />,
+      icon: <Code className="text-fuchsia-600 text-lg sm:text-xl" />,
       title: "Programmable Wallets",
       description: "Create customizable programmable wallets that execute any on-chain logic per your application's needs."
     },
     {
-      icon: <Wrench className="text-accent text-lg sm:text-xl" />,
+      icon: <Wrench className="text-purple-600 text-lg sm:text-xl" />,
       title: "Easy Integration",
       description: "Simple SDK that integrates into your app with just a few lines of code, with support for all major frameworks."
     },
     {
-      icon: <Shield className="text-accent text-lg sm:text-xl" />,
+      icon: <Shield className="text-indigo-600 text-lg sm:text-xl" />,
       title: "Enhanced UX",
       description: "Improve user experience with seamless authentication that doesn't interrupt your application flow."
     }
