@@ -20,11 +20,22 @@ export const LogoIcon: React.FC<LogoIconProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Complete Z with thunder styling */}
-      <path
-        d="M3 4H21V8H15V10H11L9 12H15V14H8L6 16H21V20H3V16H9V14H13L15 12H9V10H16L14 8H3V4Z"
-        fill={color}
-      />
+      <g>
+        {/* Main Z shape with top and bottom */}
+        <path
+          d="M3 5H21V8H13L3 18V15H11L21 5"
+          fill={color}
+          fillRule="evenodd"
+        />
+        {/* Lightning bolt in the middle */}
+        <path
+          d="M13.5 8L10 12H14.5L11 16"
+          stroke={color}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="bevel"
+        />
+      </g>
     </svg>
   );
 };
