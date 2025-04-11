@@ -51,10 +51,10 @@ const HeroSection = () => {
               </Button>
             </motion.div>
             <motion.div
-              className="mt-6 md:mt-8 flex items-center gap-2 text-neutral-300 justify-center md:justify-start"
+              className="mt-6 md:mt-8 flex items-center gap-2 text-neutral-700 font-medium justify-center md:justify-start"
               variants={slideIn("up", 0.4)}
             >
-              <ShieldCheck className="h-5 w-5 flex-shrink-0" />
+              <ShieldCheck className="h-5 w-5 flex-shrink-0 text-purple-600" />
               <span className="text-sm sm:text-base">Built with Secp256r1 Native Program for maximum security</span>
             </motion.div>
           </motion.div>
