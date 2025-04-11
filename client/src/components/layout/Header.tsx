@@ -145,6 +145,12 @@ const Header = () => {
                 Features
               </button>
               <button
+                onClick={() => scrollToSection("demo")}
+                className="block w-full text-left px-3 py-2 rounded-md font-medium text-neutral-600 hover:text-purple-700 hover:bg-purple-50 transition-colors"
+              >
+                Demo
+              </button>
+              <button
                 onClick={() => scrollToSection("how-it-works")}
                 className="block w-full text-left px-3 py-2 rounded-md font-medium text-neutral-600 hover:text-purple-700 hover:bg-purple-50 transition-colors"
               >
