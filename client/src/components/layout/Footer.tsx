@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { GradientText } from "@/components/ui/gradient-text";
 import { Container } from "@/components/ui/container";
-import logoImage from "@assets/_CaAuTmm_400x400.jpg";
+import LogoIcon from "@/components/ui/logo-icon";
 
 const Footer = () => {
   return (
@@ -11,13 +11,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-2 sm:col-span-2 md:col-span-1">
             <div className="flex items-center mb-4 sm:mb-6 gap-2">
-              <div className="h-7 w-7 overflow-hidden rounded bg-neutral-900 flex-shrink-0">
-                <img 
-                  src={logoImage} 
-                  alt="Lazor.kit Logo" 
-                  className="h-full w-full object-cover" 
-                />
-              </div>
+              <LogoIcon 
+                size={28} 
+                color="#000000" 
+                className="text-neutral-800"
+              />
               <span className="text-lg sm:text-xl font-bold">
                 Lazor<GradientText>.kit</GradientText>
               </span>
@@ -85,13 +83,11 @@ const Footer = () => {
 
         <div className="border-t border-neutral-200 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center px-4 sm:px-0">
           <div className="text-neutral-400 text-xs sm:text-sm mb-4 md:mb-0 text-center md:text-left flex items-center gap-1 justify-center md:justify-start">
-            <div className="h-4 w-4 overflow-hidden rounded bg-neutral-900 flex-shrink-0">
-              <img 
-                src={logoImage} 
-                alt="Lazor.kit Logo" 
-                className="h-full w-full object-cover" 
-              />
-            </div>
+            <LogoIcon 
+              size={16} 
+              color="#888888" 
+              className="text-neutral-400"
+            />
             &copy; {new Date().getFullYear()} Lazor.kit. All rights reserved.
           </div>
           <div className="flex flex-wrap justify-center md:flex-nowrap md:justify-start space-x-4 sm:space-x-6">

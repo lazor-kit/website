@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { GradientText } from "@/components/ui/gradient-text";
 import { motion, AnimatePresence } from "framer-motion";
-import logoImage from "@assets/_CaAuTmm_400x400.jpg";
+import LogoIcon from "@/components/ui/logo-icon";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,11 +58,11 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="h-8 w-8 overflow-hidden rounded-md transition-transform group-hover:scale-105">
-                <img 
-                  src={logoImage} 
-                  alt="Lazor.kit Logo" 
-                  className="h-full w-full object-cover" 
+              <div className="transition-transform group-hover:scale-105">
+                <LogoIcon 
+                  size={32} 
+                  color="#000000" 
+                  className="text-neutral-800"
                 />
               </div>
               <span className="text-xl font-bold">
