@@ -149,7 +149,7 @@ const DemoSection = () => {
                 <TabsTrigger value="sdk" className="text-xs sm:text-sm">dApps SDK</TabsTrigger>
               </TabsList>
               
-              <TabsContent value="secp256r1" className="border rounded-lg p-4">
+              <TabsContent value="secp256r1" className="border rounded-lg p-4 bg-neutral-50">
                 <div className="flex items-center mb-3">
                   <ShieldCheck className="text-purple-600 mr-2 h-5 w-5" />
                   <h4 className="font-semibold">Native Program for Secp256r1</h4>
@@ -171,7 +171,7 @@ const result = await sendAndConfirmTransaction(connection, tx, []);`}
                 </CodeBlock>
               </TabsContent>
               
-              <TabsContent value="relayer" className="border rounded-lg p-4">
+              <TabsContent value="relayer" className="border rounded-lg p-4 bg-neutral-50">
                 <div className="flex items-center mb-3">
                   <Zap className="text-yellow-500 mr-2 h-5 w-5" />
                   <h4 className="font-semibold">Relayer for Gasless Transactions</h4>
@@ -193,7 +193,7 @@ console.log("Transaction sent:", result.signature);`}
                 </CodeBlock>
               </TabsContent>
               
-              <TabsContent value="pda" className="border rounded-lg p-4">
+              <TabsContent value="pda" className="border rounded-lg p-4 bg-neutral-50">
                 <div className="flex items-center mb-3">
                   <Server className="text-blue-500 mr-2 h-5 w-5" />
                   <h4 className="font-semibold">Program for Handle PDA</h4>
@@ -222,7 +222,7 @@ const tx = await program.methods
                 </CodeBlock>
               </TabsContent>
               
-              <TabsContent value="sdk" className="border rounded-lg p-4">
+              <TabsContent value="sdk" className="border rounded-lg p-4 bg-neutral-50">
                 <div className="flex items-center mb-3">
                   <Code className="text-green-500 mr-2 h-5 w-5" />
                   <h4 className="font-semibold">SDK for dApps</h4>

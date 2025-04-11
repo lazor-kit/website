@@ -84,11 +84,11 @@ export function CodeBlock({
   return (
     <div
       className={`font-mono rounded-lg overflow-hidden text-xs sm:text-sm ${
-        className || "bg-[#1e1e2e] text-[#cdd6f4]"
+        className || "bg-[#1e1e3e] text-[#cdd6f4]"
       }`}
     >
       {(withTerminal || fileName) && (
-        <div className="bg-[#181825] text-white p-2 sm:p-3 flex items-center justify-between border-b border-[#313244]">
+        <div className="bg-[#131320] text-white p-2 sm:p-3 flex items-center justify-between border-b border-[#313244]">
           {withTerminal && (
             <div className="flex space-x-1.5 sm:space-x-2">
               <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500"></div>
