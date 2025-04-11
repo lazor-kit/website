@@ -12,9 +12,14 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCardProps) => (
   <motion.div
-    className="bg-white p-4 sm:p-6 rounded-xl border border-neutral-200 hover:shadow-lg transition-shadow"
+    className="bg-white p-4 sm:p-6 rounded-xl border border-neutral-200 hover:shadow-lg transition-all"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
+    whileHover={{ 
+      y: -5, 
+      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      borderColor: "#9945FF20"
+    }}
     transition={{ duration: 0.5, delay }}
     viewport={{ once: true }}
   >

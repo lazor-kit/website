@@ -17,10 +17,14 @@ const Step = ({ number, title, description, code, children }: StepProps) => (
     className="relative pb-6 sm:pb-0"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
+    whileHover={{ 
+      y: -5,
+      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+    }}
     transition={{ duration: 0.5 }}
     viewport={{ once: true }}
   >
-    <div className="absolute left-0 top-0 -ml-2 sm:-ml-3 mt-2 bg-accent rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-white text-sm sm:text-base font-bold">
+    <div className="absolute left-0 top-0 -ml-2 sm:-ml-3 mt-2 bg-gradient-to-br from-purple-500 to-accent rounded-full w-7 h-7 sm:w-9 sm:h-9 flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-md border-2 border-white">
       {number}
     </div>
     <div className="bg-white rounded-xl border border-neutral-200 p-4 sm:p-6 ml-5 sm:ml-6">
