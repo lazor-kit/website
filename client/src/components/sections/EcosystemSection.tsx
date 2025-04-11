@@ -2,39 +2,9 @@ import { Container } from "@/components/ui/container";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/animations";
 import { GradientText } from "@/components/ui/gradient-text";
-import { Laptop, Smartphone, Globe, Cpu, Database, LucideIcon } from "lucide-react";
+import { Laptop, Smartphone, Globe, Cpu, Database } from "lucide-react";
 
-interface EcosystemCardProps {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  delay?: number;
-}
 
-const EcosystemCard = ({ title, description, icon: Icon, delay = 0 }: EcosystemCardProps) => {
-  return (
-    <motion.div
-      className="bg-white rounded-xl border border-neutral-200 p-4 sm:p-6 shadow-sm"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
-      whileHover={{ 
-        y: -5, 
-        boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-        borderColor: "#9945FF20"
-      }}
-      viewport={{ once: true }}
-    >
-      <div className="flex items-center mb-4">
-        <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-          <Icon className="text-purple-600 h-5 w-5" />
-        </div>
-        <h3 className="font-bold text-lg">{title}</h3>
-      </div>
-      <p className="text-neutral-500 text-sm">{description}</p>
-    </motion.div>
-  );
-};
 
 const EcosystemSection = () => {
   return (
@@ -125,30 +95,7 @@ const EcosystemSection = () => {
             </div>
           </motion.div>
           
-          {/* Integration Points */}
-          <h3 className="text-xl font-bold mb-6 text-center">Key Integration Points</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-            <EcosystemCard
-              title="Solana dApps"
-              description="Easily integrate with any Solana-based decentralized application using our seamless SDK. Works with major frameworks including React, Vue, and vanilla JavaScript."
-              icon={Globe}
-              delay={0.1}
-            />
-            
-            <EcosystemCard
-              title="Native Mobile Apps"
-              description="Native SDKs for iOS and Android provide seamless integration with your mobile applications, leveraging device biometrics for authentication."
-              icon={Smartphone}
-              delay={0.2}
-            />
-            
-            <EcosystemCard
-              title="Web Applications"
-              description="Our JavaScript SDK makes it simple to add Lazor.kit authentication to any web application, with cross-browser and cross-platform support."
-              icon={Laptop}
-              delay={0.3}
-            />
-          </div>
+
           
           {/* Partners & Integrations */}
           <motion.div
