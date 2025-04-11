@@ -8,34 +8,23 @@ interface LogoIconProps {
 
 export const LogoIcon: React.FC<LogoIconProps> = ({ 
   size = 24, 
-  color = "currentColor",
+  color = "#6C22C8", // Default purple color
   className = "" 
 }) => {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 24 24"
+      viewBox="0 0 240 240"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <g>
-        {/* Main Z shape with top and bottom */}
-        <path
-          d="M3 5H21V8H13L3 18V15H11L21 5"
-          fill={color}
-          fillRule="evenodd"
-        />
-        {/* Lightning bolt in the middle */}
-        <path
-          d="M13.5 8L10 12H14.5L11 16"
-          stroke={color}
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="bevel"
-        />
-      </g>
+      {/* Stylized Z based on provided image */}
+      <path
+        d="M30 60L170 60L210 110L150 110L150 140L90 140L90 170L210 170L170 220L30 220L70 170L130 170L130 140L190 140L190 110L70 110L30 60Z"
+        fill={color}
+      />
     </svg>
   );
 };
