@@ -15,35 +15,19 @@ export const LogoIcon: React.FC<LogoIconProps> = ({
     <svg
       width={size}
       height={size}
-      viewBox="0 0 300 300"
+      viewBox="0 0 240 240"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* The geometric Z design based on the provided image */}
+      {/* More accurate representation based on the provided image */}
       <path
-        d="M80 60L220 60L280 120L160 120L80 60Z"
+        d="M40 60 L180 60 L240 120 M240 120 L160 200 L80 200 M80 200 L40 160 L100 120 M100 120 L40 60 M100 120 L160 200 M100 120 L180 60"
         stroke={color}
-        strokeWidth="6"
+        strokeWidth="3"
         strokeLinejoin="round"
-      />
-      <path
-        d="M280 120L160 240L80 240L220 120L280 120Z"
-        stroke={color}
-        strokeWidth="6"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M160 240L20 180L80 240L160 240Z"
-        stroke={color}
-        strokeWidth="6"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M80 60L20 180L80 240L160 120L220 120L80 60Z"
-        stroke={color}
-        strokeWidth="6"
-        strokeLinejoin="round"
+        strokeLinecap="round"
+        fill="none"
       />
     </svg>
   );
