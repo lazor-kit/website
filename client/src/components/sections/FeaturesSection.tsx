@@ -1,0 +1,101 @@
+import { Container } from "@/components/ui/container";
+import { Fingerprint, ShieldCheck, Zap, Code, Wrench, Shield } from "lucide-react";
+import { motion } from "framer-motion";
+import { staggerContainer, fadeIn } from "@/lib/animations";
+
+interface FeatureCardProps {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+  delay?: number;
+}
+
+const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCardProps) => (
+  <motion.div
+    className="bg-white p-6 rounded-xl border border-neutral-200 hover:shadow-lg transition-shadow"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay }}
+    viewport={{ once: true }}
+  >
+    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+      {icon}
+    </div>
+    <h3 className="text-xl font-semibold mb-3">{title}</h3>
+    <p className="text-neutral-400">{description}</p>
+  </motion.div>
+);
+
+const FeaturesSection = () => {
+  const features = [
+    {
+      icon: <Fingerprint className="text-accent text-xl" />,
+      title: "Passkey Authentication",
+      description: "Use FaceID or fingerprint biometrics for secure, passwordless authentication with no wallet applications needed."
+    },
+    {
+      icon: <ShieldCheck className="text-accent text-xl" />,
+      title: "Secp256r1 Native Program",
+      description: "Built on secure standards used by major financial institutions, ensuring enterprise-grade security for your applications."
+    },
+    {
+      icon: <Zap className="text-accent text-xl" />,
+      title: "Lightning Fast",
+      description: "Authentication in milliseconds without the usual wallet connection delays or approval popups."
+    },
+    {
+      icon: <Code className="text-accent text-xl" />,
+      title: "Programmable Wallets",
+      description: "Create customizable programmable wallets that execute any on-chain logic per your application's needs."
+    },
+    {
+      icon: <Wrench className="text-accent text-xl" />,
+      title: "Easy Integration",
+      description: "Simple SDK that integrates into your app with just a few lines of code, with support for all major frameworks."
+    },
+    {
+      icon: <Shield className="text-accent text-xl" />,
+      title: "Enhanced UX",
+      description: "Improve user experience with seamless authentication that doesn't interrupt your application flow."
+    }
+  ];
+
+  return (
+    <section id="features" className="py-16 bg-neutral-100">
+      <Container>
+        <motion.div
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Features</h2>
+          <p className="text-neutral-400 max-w-2xl mx-auto">
+            Lazor.kit delivers a seamless sign-in experience while maintaining enterprise-grade security.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {features.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+              delay={index * 0.1}
+            />
+          ))}
+        </motion.div>
+      </Container>
+    </section>
+  );
+};
+
+export default FeaturesSection;
