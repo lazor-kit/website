@@ -2,6 +2,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import ComparisonSection from "@/components/sections/ComparisonSection";
+import PartnersSection from "@/components/sections/PartnersSection";
 import CTASection from "@/components/sections/CTASection";
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <FeaturesSection />
       <HowItWorksSection />
       <ComparisonSection />
+      <PartnersSection />
       <CTASection />
     </>
   );
