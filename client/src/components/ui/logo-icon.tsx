@@ -20,14 +20,10 @@ export const LogoIcon: React.FC<LogoIconProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Bold thunder-like Z */}
+      {/* Traditional Z with lightning bolt in diagonal */}
       <path
-        d="M4 5h16l-10 14h-3l7-10h-10v-4z"
+        d="M3 5H21V8H12L13 10L11 14L21 14V19H3V16H12L11 14L13 10L3 10V5Z"
         fill={color}
-        stroke={color}
-        strokeWidth="0.5"
-        strokeLinejoin="round"
-        strokeLinecap="round"
       />
     </svg>
   );
