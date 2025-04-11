@@ -37,9 +37,9 @@ const Step = ({ number, title, description, code, children }: StepProps) => (
         <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">{title}</h3>
         <p className="text-sm sm:text-base text-neutral-400 mb-3 sm:mb-4">{description}</p>
         {code && (
-          <div className="bg-neutral-100 p-2 sm:p-3 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
-            <pre><code>{code}</code></pre>
-          </div>
+          <CodeBlock className="text-xs" withTerminal>
+            {code}
+          </CodeBlock>
         )}
         {children && <div className="mt-auto">{children}</div>}
       </motion.div>
@@ -129,7 +129,7 @@ const HowItWorksSection = () => {
           viewport={{ once: true }}
         >
           <div className="overflow-x-auto">
-            <CodeBlock withTerminal fileName="Full Implementation Example">
+            <CodeBlock withTerminal fileName="full-implementation.js" showLineNumbers>
 {`import { LazorKit } from '@lazorkit/auth';
 
 // Initialize Lazor.kit with your API key
