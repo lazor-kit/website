@@ -67,28 +67,28 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection("home")}
-              className="font-medium hover:text-accent transition-colors"
+              className="font-medium text-neutral-600 hover:text-purple-700 transition-colors"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("features")}
-              className="font-medium hover:text-accent transition-colors"
+              className="font-medium text-neutral-600 hover:text-purple-700 transition-colors"
             >
               Features
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="font-medium hover:text-accent transition-colors"
+              className="font-medium text-neutral-600 hover:text-purple-700 transition-colors"
             >
               How It Works
             </button>
-            <Link href="/" className="font-medium hover:text-accent transition-colors">
+            <Link href="/" className="font-medium text-neutral-600 hover:text-purple-700 transition-colors">
               Docs
             </Link>
             <button
               onClick={() => scrollToSection("about")}
-              className="font-medium hover:text-accent transition-colors"
+              className="font-medium text-neutral-600 hover:text-purple-700 transition-colors"
             >
               About Us
             </button>
@@ -105,7 +105,7 @@ const Header = () => {
           <div className="md:hidden">
             <button 
               type="button" 
-              className="text-gray-800 hover:text-accent focus:outline-none"
+              className="text-neutral-600 hover:text-purple-700 focus:outline-none transition-colors"
               onClick={toggleMenu}
               aria-label={isOpen ? "Close menu" : "Open menu"}
             >
@@ -128,31 +128,31 @@ const Header = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <button
                 onClick={() => scrollToSection("home")}
-                className="block w-full text-left px-3 py-2 rounded-md font-medium hover:bg-neutral-100"
+                className="block w-full text-left px-3 py-2 rounded-md font-medium text-neutral-600 hover:text-purple-700 hover:bg-purple-50 transition-colors"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("features")}
-                className="block w-full text-left px-3 py-2 rounded-md font-medium hover:bg-neutral-100"
+                className="block w-full text-left px-3 py-2 rounded-md font-medium text-neutral-600 hover:text-purple-700 hover:bg-purple-50 transition-colors"
               >
                 Features
               </button>
               <button
                 onClick={() => scrollToSection("how-it-works")}
-                className="block w-full text-left px-3 py-2 rounded-md font-medium hover:bg-neutral-100"
+                className="block w-full text-left px-3 py-2 rounded-md font-medium text-neutral-600 hover:text-purple-700 hover:bg-purple-50 transition-colors"
               >
                 How It Works
               </button>
               <Link
                 href="/"
-                className="block px-3 py-2 rounded-md font-medium hover:bg-neutral-100"
+                className="block px-3 py-2 rounded-md font-medium text-neutral-600 hover:text-purple-700 hover:bg-purple-50 transition-colors"
               >
                 Docs
               </Link>
               <button
                 onClick={() => scrollToSection("about")}
-                className="block w-full text-left px-3 py-2 rounded-md font-medium hover:bg-neutral-100"
+                className="block w-full text-left px-3 py-2 rounded-md font-medium text-neutral-600 hover:text-purple-700 hover:bg-purple-50 transition-colors"
               >
                 About Us
               </button>
