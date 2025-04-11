@@ -1,38 +1,39 @@
 import { Container } from "@/components/ui/container";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/animations";
-import { SiSolana, SiOpensea, SiFigma, SiShopify, SiSlack, SiDiscord, SiVercel, SiNetlify, SiBinance, SiStripe, SiAmazon, SiGoogle } from "react-icons/si";
+import { SiSolana, SiMagento } from "react-icons/si";
+import { CircleDollarSign, Wallet, Landmark, BarChart3, Coins, Gem, ArrowRightLeft, ShoppingBag, Zap, PiggyBank } from "lucide-react";
 
 const PartnersSection = () => {
-  // Icons row 1 and 2 to create an offset effect
+  // Icons row 1 and 2 to create an offset effect - Solana dApps
   const iconRow1 = [
-    { icon: <SiSolana className="text-accent/80" />, name: "Solana" },
-    { icon: <SiOpensea className="text-accent/80" />, name: "OpenSea" },
-    { icon: <SiFigma className="text-accent/80" />, name: "Figma" },
-    { icon: <SiShopify className="text-accent/80" />, name: "Shopify" },
-    { icon: <SiSlack className="text-accent/80" />, name: "Slack" },
-    { icon: <SiDiscord className="text-accent/80" />, name: "Discord" },
-    { icon: <SiSolana className="text-accent/80" />, name: "Solana" },
-    { icon: <SiOpensea className="text-accent/80" />, name: "OpenSea" },
-    { icon: <SiFigma className="text-accent/80" />, name: "Figma" },
-    { icon: <SiShopify className="text-accent/80" />, name: "Shopify" },
-    { icon: <SiSlack className="text-accent/80" />, name: "Slack" },
-    { icon: <SiDiscord className="text-accent/80" />, name: "Discord" },
+    { icon: <SiSolana className="text-purple-600" />, name: "Solana" },
+    { icon: <CircleDollarSign className="text-orange-500" />, name: "Jupiter" },
+    { icon: <Wallet className="text-blue-500" />, name: "Phantom" },
+    { icon: <Landmark className="text-indigo-500" />, name: "Marinade" },
+    { icon: <BarChart3 className="text-cyan-500" />, name: "Birdeye" },
+    { icon: <ArrowRightLeft className="text-purple-500" />, name: "Raydium" },
+    { icon: <SiSolana className="text-purple-600" />, name: "Solana" },
+    { icon: <CircleDollarSign className="text-orange-500" />, name: "Jupiter" },
+    { icon: <Wallet className="text-blue-500" />, name: "Phantom" },
+    { icon: <Landmark className="text-indigo-500" />, name: "Marinade" },
+    { icon: <BarChart3 className="text-cyan-500" />, name: "Birdeye" },
+    { icon: <ArrowRightLeft className="text-purple-500" />, name: "Raydium" },
   ];
 
   const iconRow2 = [
-    { icon: <SiVercel className="text-accent/80" />, name: "Vercel" },
-    { icon: <SiNetlify className="text-accent/80" />, name: "Netlify" },
-    { icon: <SiBinance className="text-accent/80" />, name: "Binance" },
-    { icon: <SiStripe className="text-accent/80" />, name: "Stripe" },
-    { icon: <SiAmazon className="text-accent/80" />, name: "Amazon" },
-    { icon: <SiGoogle className="text-accent/80" />, name: "Google" },
-    { icon: <SiVercel className="text-accent/80" />, name: "Vercel" },
-    { icon: <SiNetlify className="text-accent/80" />, name: "Netlify" },
-    { icon: <SiBinance className="text-accent/80" />, name: "Binance" },
-    { icon: <SiStripe className="text-accent/80" />, name: "Stripe" },
-    { icon: <SiAmazon className="text-accent/80" />, name: "Amazon" },
-    { icon: <SiGoogle className="text-accent/80" />, name: "Google" },
+    { icon: <Coins className="text-amber-500" />, name: "Meteora" },
+    { icon: <Gem className="text-fuchsia-500" />, name: "Magic Eden" },
+    { icon: <ShoppingBag className="text-green-500" />, name: "Tensor" },
+    { icon: <Zap className="text-pink-500" />, name: "Pump.fun" },
+    { icon: <PiggyBank className="text-teal-500" />, name: "Kamino" },
+    { icon: <SiMagento className="text-red-500" />, name: "Drift" },
+    { icon: <Coins className="text-amber-500" />, name: "Meteora" },
+    { icon: <Gem className="text-fuchsia-500" />, name: "Magic Eden" },
+    { icon: <ShoppingBag className="text-green-500" />, name: "Tensor" },
+    { icon: <Zap className="text-pink-500" />, name: "Pump.fun" },
+    { icon: <PiggyBank className="text-teal-500" />, name: "Kamino" },
+    { icon: <SiMagento className="text-red-500" />, name: "Drift" },
   ];
 
   return (
