@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode } from "react";
 
 interface CodeBlockProps {
   children: ReactNode;
@@ -9,47 +9,6 @@ interface CodeBlockProps {
   fileName?: string;
 }
 
-// Simple syntax highlighting function
-const highlightCode = (code: string): string => {
-  // Replace specific patterns with styled spans
-  return code
-    // Keywords
-    .replace(
-      /\b(const|let|var|function|return|import|export|from|if|else|for|while|switch|case|break|continue|class|extends|new|this|async|await|try|catch|throw|typeof|instanceof)\b/g,
-      '<span class="text-purple-500">$1</span>'
-    )
-    // Comments
-    .replace(
-      /(\/\/.*$)/gm,
-      '<span class="text-neutral-400">$1</span>'
-    )
-    // Strings
-    .replace(
-      /(['"`])(.*?)(['"`])/g,
-      '<span class="text-green-500">$1$2$3</span>'
-    )
-    // Numbers
-    .replace(
-      /\b(\d+)\b/g,
-      '<span class="text-blue-400">$1</span>'
-    )
-    // Function calls
-    .replace(
-      /(\w+)(\s*\()/g,
-      '<span class="text-yellow-500">$1</span>$2'
-    )
-    // Object properties
-    .replace(
-      /(\.\w+)/g,
-      '<span class="text-cyan-400">$1</span>'
-    )
-    // Brackets
-    .replace(
-      /([{}[\]()])/g,
-      '<span class="text-neutral-300">$1</span>'
-    );
-};
-
 export function CodeBlock({
   children,
   showLineNumbers = false,
@@ -58,14 +17,11 @@ export function CodeBlock({
   withTerminal = false,
   fileName,
 }: CodeBlockProps) {
-  const codeRef = useRef<HTMLPreElement>(null);
+  // Convert to string for proper rendering
+  const codeText = children ? children.toString() : '';
+  // Split into lines for line numbers
+  const lines = codeText.split('\n');
   
-  useEffect(() => {
-    if (codeRef.current && typeof children === 'string') {
-      codeRef.current.innerHTML = highlightCode(children);
-    }
-  }, [children]);
-
   return (
     <div
       className={`font-mono rounded-lg overflow-hidden text-xs sm:text-sm ${
@@ -93,17 +49,14 @@ export function CodeBlock({
       <div className="p-3 sm:p-4 overflow-x-auto relative">
         {showLineNumbers && (
           <div className="absolute left-2 top-3 sm:top-4 text-[#6c7086] select-none">
-            {Array.from({ length: (children?.toString().split('\n').length || 1) }).map((_, i) => (
+            {lines.map((_, i) => (
               <div key={i} className="text-right pr-3">{i + 1}</div>
             ))}
           </div>
         )}
         
-        <pre 
-          ref={codeRef}
-          className={`language-${language} ${showLineNumbers ? 'pl-8' : ''} whitespace-pre text-[#cdd6f4]`}
-        >
-          {typeof children !== 'string' ? children : null}
+        <pre className={`${showLineNumbers ? 'pl-8' : ''} whitespace-pre text-[#cdd6f4]`}>
+          <code>{codeText}</code>
         </pre>
       </div>
     </div>
