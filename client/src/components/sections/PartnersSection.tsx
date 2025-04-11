@@ -48,7 +48,7 @@ const PartnersSection = () => {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Trusted By</h2>
           <p className="text-sm sm:text-base text-neutral-400 max-w-2xl mx-auto">
-            Join the growing ecosystem of dApps and platforms using Lazor.kit for seamless Solana authentication.
+            Leading platforms in the Solana ecosystem that utilize secure authentication solutions.
           </p>
         </motion.div>
       </Container>

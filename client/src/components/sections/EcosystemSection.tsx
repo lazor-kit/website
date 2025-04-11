@@ -158,9 +158,9 @@ const EcosystemSection = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold mb-4">Join the Growing Ecosystem</h3>
+            <h3 className="text-xl font-bold mb-4">Lazor.kit Integrations</h3>
             <p className="text-sm text-neutral-500 max-w-2xl mx-auto mb-8">
-              Join the growing ecosystem of dApps and platforms using Lazor.kit for seamless Solana authentication.
+              Our integration partners support a seamless authentication experience across the Solana ecosystem.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
