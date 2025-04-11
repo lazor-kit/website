@@ -64,7 +64,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-6">
             <button
               onClick={() => scrollToSection("home")}
               className="font-medium text-neutral-600 hover:text-purple-700 transition-colors"
@@ -76,6 +76,12 @@ const Header = () => {
               className="font-medium text-neutral-600 hover:text-purple-700 transition-colors"
             >
               Features
+            </button>
+            <button
+              onClick={() => scrollToSection("demo")}
+              className="font-medium text-neutral-600 hover:text-purple-700 transition-colors"
+            >
+              Demo
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}

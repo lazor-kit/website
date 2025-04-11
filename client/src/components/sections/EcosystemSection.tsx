@@ -1,0 +1,183 @@
+import { Container } from "@/components/ui/container";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/lib/animations";
+import { GradientText } from "@/components/ui/gradient-text";
+import { Laptop, Smartphone, Globe, Cpu, Database, LucideIcon } from "lucide-react";
+
+interface EcosystemCardProps {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  delay?: number;
+}
+
+const EcosystemCard = ({ title, description, icon: Icon, delay = 0 }: EcosystemCardProps) => {
+  return (
+    <motion.div
+      className="bg-white rounded-xl border border-neutral-200 p-4 sm:p-6 shadow-sm"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      whileHover={{ 
+        y: -5, 
+        boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        borderColor: "#9945FF20"
+      }}
+      viewport={{ once: true }}
+    >
+      <div className="flex items-center mb-4">
+        <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+          <Icon className="text-purple-600 h-5 w-5" />
+        </div>
+        <h3 className="font-bold text-lg">{title}</h3>
+      </div>
+      <p className="text-neutral-500 text-sm">{description}</p>
+    </motion.div>
+  );
+};
+
+const EcosystemSection = () => {
+  return (
+    <section className="py-16 bg-gradient-to-b from-neutral-50 to-white">
+      <Container>
+        <motion.div
+          className="text-center mb-12 px-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+            The <GradientText>Lazor.kit</GradientText> Ecosystem
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-500 max-w-2xl mx-auto">
+            Our comprehensive solution extends across the entire Solana ecosystem, providing reliable tools for both end-users and developers.
+          </p>
+        </motion.div>
+
+        <div className="px-4">
+          {/* Ecosystem Diagram */}
+          <motion.div
+            className="relative bg-white rounded-xl border border-neutral-200 shadow-sm p-6 mb-12 overflow-hidden"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-50/50 to-transparent"></div>
+            
+            <div className="relative">
+              <h3 className="text-xl font-bold mb-8 text-center">How Components Work Together</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                <div className="bg-purple-50 border border-purple-100 rounded-lg p-4 text-center">
+                  <div className="inline-block bg-white p-3 rounded-full mb-3 shadow-sm">
+                    <Laptop className="h-6 w-6 text-purple-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">dApp</h4>
+                  <p className="text-xs text-neutral-500">User-facing application that integrates with Lazor.kit SDK</p>
+                </div>
+                
+                <div className="bg-indigo-50 border border-indigo-100 rounded-lg p-4 text-center">
+                  <div className="inline-block bg-white p-3 rounded-full mb-3 shadow-sm">
+                    <Smartphone className="h-6 w-6 text-indigo-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">Passkey Authentication</h4>
+                  <p className="text-xs text-neutral-500">Device-based biometric authentication using secure enclave</p>
+                </div>
+                
+                <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 text-center">
+                  <div className="inline-block bg-white p-3 rounded-full mb-3 shadow-sm">
+                    <Globe className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">Solana Network</h4>
+                  <p className="text-xs text-neutral-500">Blockchain infrastructure where all transactions are processed</p>
+                </div>
+              </div>
+              
+              <div className="hidden md:block h-20 relative">
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M133 40H400M667 40H400M400 40V80" stroke="#9945FF" strokeWidth="2" strokeDasharray="4 4"/>
+                </svg>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-violet-50 border border-violet-100 rounded-lg p-4 text-center md:mr-12">
+                  <div className="inline-block bg-white p-3 rounded-full mb-3 shadow-sm">
+                    <Cpu className="h-6 w-6 text-violet-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">Secp256r1 Native Program</h4>
+                  <p className="text-xs text-neutral-500">On-chain program that verifies signatures from passkeys</p>
+                </div>
+                
+                <div className="bg-fuchsia-50 border border-fuchsia-100 rounded-lg p-4 text-center md:ml-12">
+                  <div className="inline-block bg-white p-3 rounded-full mb-3 shadow-sm">
+                    <Database className="h-6 w-6 text-fuchsia-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">PDA Management Program</h4>
+                  <p className="text-xs text-neutral-500">Creates and manages programmable deposit accounts for users</p>
+                </div>
+              </div>
+
+              <div className="text-center mt-8 bg-purple-900/5 p-4 rounded-lg border border-purple-100">
+                <p className="text-sm font-medium text-purple-700">Relayer Infrastructure for Gasless Transactions</p>
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Integration Points */}
+          <h3 className="text-xl font-bold mb-6 text-center">Key Integration Points</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <EcosystemCard
+              title="Solana dApps"
+              description="Easily integrate with any Solana-based decentralized application using our seamless SDK. Works with major frameworks including React, Vue, and vanilla JavaScript."
+              icon={Globe}
+              delay={0.1}
+            />
+            
+            <EcosystemCard
+              title="Native Mobile Apps"
+              description="Native SDKs for iOS and Android provide seamless integration with your mobile applications, leveraging device biometrics for authentication."
+              icon={Smartphone}
+              delay={0.2}
+            />
+            
+            <EcosystemCard
+              title="Web Applications"
+              description="Our JavaScript SDK makes it simple to add Lazor.kit authentication to any web application, with cross-browser and cross-platform support."
+              icon={Laptop}
+              delay={0.3}
+            />
+          </div>
+          
+          {/* Partners & Integrations - Placeholder */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-bold mb-6">Trusted By</h3>
+            <div className="flex flex-wrap justify-center gap-8 opacity-70">
+              <div className="bg-neutral-100 h-12 w-32 rounded-md flex items-center justify-center">
+                <span className="text-xs font-medium text-neutral-400">PARTNER 1</span>
+              </div>
+              <div className="bg-neutral-100 h-12 w-32 rounded-md flex items-center justify-center">
+                <span className="text-xs font-medium text-neutral-400">PARTNER 2</span>
+              </div>
+              <div className="bg-neutral-100 h-12 w-32 rounded-md flex items-center justify-center">
+                <span className="text-xs font-medium text-neutral-400">PARTNER 3</span>
+              </div>
+              <div className="bg-neutral-100 h-12 w-32 rounded-md flex items-center justify-center">
+                <span className="text-xs font-medium text-neutral-400">PARTNER 4</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </Container>
+    </section>
+  );
+};
+
+export default EcosystemSection;
