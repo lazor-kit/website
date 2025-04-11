@@ -157,7 +157,7 @@ const DemoSection = () => {
                 <p className="text-sm text-neutral-500 mb-4">
                   Our custom native program verifies Secp256r1 signatures on-chain, enabling secure authentication using device biometrics.
                 </p>
-                <CodeBlock className="text-xs">
+                <CodeBlock className="text-xs" withTerminal fileName="verify-signature.js" showLineNumbers>
 {`// Verify a Secp256r1 signature on-chain
 const tx = new Transaction();
 tx.add(
@@ -179,7 +179,7 @@ const result = await sendAndConfirmTransaction(connection, tx, []);`}
                 <p className="text-sm text-neutral-500 mb-4">
                   Our relayer infrastructure enables gasless transactions, allowing users to interact with dApps without holding SOL for fees.
                 </p>
-                <CodeBlock className="text-xs">
+                <CodeBlock className="text-xs" withTerminal fileName="relayer-transaction.js" showLineNumbers>
 {`// Submit a transaction via the Lazor relayer
 const transaction = await wallet.createTransaction({
   to: "destination_address",
@@ -201,7 +201,7 @@ console.log("Transaction sent:", result.signature);`}
                 <p className="text-sm text-neutral-500 mb-4">
                   Our PDA program manages wallet accounts on-chain, providing a secure and programmable wallet experience.
                 </p>
-                <CodeBlock className="text-xs">
+                <CodeBlock className="text-xs" withTerminal fileName="pda-wallet.js" showLineNumbers>
 {`// Derive the user's PDA wallet address
 const [walletAddress] = await PublicKey.findProgramAddress(
   [
@@ -230,7 +230,7 @@ const tx = await program.methods
                 <p className="text-sm text-neutral-500 mb-4">
                   Our SDK provides developers with an easy integration path for implementing Lazor.kit authentication.
                 </p>
-                <CodeBlock className="text-xs">
+                <CodeBlock className="text-xs" withTerminal fileName="sdk-integration.js" showLineNumbers>
 {`// Initialize Lazor.kit in your application
 import { LazorKit } from '@lazorkit/auth';
 
