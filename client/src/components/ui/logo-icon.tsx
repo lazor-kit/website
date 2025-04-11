@@ -15,19 +15,19 @@ export const LogoIcon: React.FC<LogoIconProps> = ({
     <svg
       width={size}
       height={size}
-      viewBox="0 0 240 240"
+      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* More accurate representation based on the provided image */}
+      {/* Bold thunder-like Z */}
       <path
-        d="M40 60 L180 60 L240 120 M240 120 L160 200 L80 200 M80 200 L40 160 L100 120 M100 120 L40 60 M100 120 L160 200 M100 120 L180 60"
+        d="M4 5h16l-10 14h-3l7-10h-10v-4z"
+        fill={color}
         stroke={color}
-        strokeWidth="3"
+        strokeWidth="0.5"
         strokeLinejoin="round"
         strokeLinecap="round"
-        fill="none"
       />
     </svg>
   );

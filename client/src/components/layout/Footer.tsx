@@ -12,9 +12,9 @@ const Footer = () => {
           <div className="col-span-2 sm:col-span-2 md:col-span-1">
             <div className="flex items-center mb-4 sm:mb-6 gap-2">
               <LogoIcon 
-                size={28} 
-                color="#000000" 
-                className="text-neutral-800"
+                size={24} 
+                color="#6C22C8" 
+                className="drop-shadow-sm"
               />
               <span className="text-lg sm:text-xl font-bold">
                 Lazor<GradientText>.kit</GradientText>
@@ -84,9 +84,9 @@ const Footer = () => {
         <div className="border-t border-neutral-200 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center px-4 sm:px-0">
           <div className="text-neutral-400 text-xs sm:text-sm mb-4 md:mb-0 text-center md:text-left flex items-center gap-1 justify-center md:justify-start">
             <LogoIcon 
-              size={16} 
-              color="#888888" 
-              className="text-neutral-400"
+              size={14} 
+              color="#9CA3AF" 
+              className="opacity-80"
             />
             &copy; {new Date().getFullYear()} Lazor.kit. All rights reserved.
           </div>

@@ -60,9 +60,9 @@ const Header = () => {
             <Link href="/" className="flex items-center gap-2 group">
               <div className="transition-transform group-hover:scale-105">
                 <LogoIcon 
-                  size={32} 
-                  color="#000000" 
-                  className="text-neutral-800"
+                  size={28} 
+                  color="#6C22C8" 
+                  className="drop-shadow-sm"
                 />
               </div>
               <span className="text-xl font-bold">
