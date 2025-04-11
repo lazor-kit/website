@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Code highlighting styles */
+.code-keyword {
+  color: #9d7cd8;
+}
+.code-comment {
+  color: #7c7f93;
+}
+.code-string {
+  color: #a6da95;
+}
+.code-function {
+  color: #f5a97f;
+}
+.code-number {
+  color: #7dc4e4;
+}
+.code-variable {
+  color: #cdd6f4;
+}
+
 @layer base {
   * {
     @apply border-border;

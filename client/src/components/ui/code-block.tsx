@@ -9,27 +9,62 @@ interface CodeBlockProps {
   fileName?: string;
 }
 
-// A simpler syntax highlighter function
-const highlightCode = (code: string) => {
+// A better syntax highlighter using JSX and CSS classes
+const highlightCode = (code: string): JSX.Element[] => {
   const lines = code.split('\n');
   
   return lines.map((line, index) => {
-    // Apply basic syntax highlighting
-    let highlightedLine = line
-      // Highlight keywords
-      .replace(/\b(const|let|var|function|return|import|export|from|if|else|for|while|class|extends|async|await)\b/g, '<span style="color: #9d7cd8;">$1</span>')
-      // Highlight comments
-      .replace(/(\/\/.*$)/g, '<span style="color: #7c7f93;">$1</span>')
-      // Highlight strings with quotes
-      .replace(/(['"`])(.*?)(['"`])/g, '<span style="color: #a6da95;">$1$2$3</span>')
-      // Highlight function calls
-      .replace(/(\w+)(\s*\()/g, '<span style="color: #f5a97f;">$1</span>$2')
-      // Highlight numbers
-      .replace(/\b(\d+)\b/g, '<span style="color: #7dc4e4;">$1</span>');
+    // Replace keywords with styled spans
+    let parts: JSX.Element[] = [];
+    let currentPart = '';
+    let currentIndex = 0;
     
-    return (
-      <div key={index} dangerouslySetInnerHTML={{ __html: highlightedLine }} />
-    );
+    // Handle keywords
+    const processKeywords = (text: string) => {
+      const keywords = ['const', 'let', 'var', 'function', 'return', 'import', 'export', 
+                        'from', 'if', 'else', 'for', 'while', 'class', 'extends', 'async', 'await'];
+      
+      for (const keyword of keywords) {
+        const regex = new RegExp(`\\b${keyword}\\b`, 'g');
+        text = text.replace(regex, match => `___KEYWORD_START___${match}___KEYWORD_END___`);
+      }
+      
+      // Handle comments
+      text = text.replace(/(\/\/.*$)/g, '___COMMENT_START___$1___COMMENT_END___');
+      
+      // Handle strings
+      text = text.replace(/(['"`])(.*?)(['"`])/g, '___STRING_START___$1$2$3___STRING_END___');
+      
+      // Handle numbers
+      text = text.replace(/\b(\d+)\b/g, '___NUMBER_START___$1___NUMBER_END___');
+      
+      // Handle function calls
+      text = text.replace(/(\w+)(\s*\()/g, '___FUNCTION_START___$1___FUNCTION_END___$2');
+      
+      return text;
+    };
+    
+    const processedLine = processKeywords(line);
+    const parts2 = processedLine.split(/(___\w+_START___|___\w+_END___)/g);
+    
+    let currentType = '';
+    const result: JSX.Element[] = [];
+    
+    parts2.forEach((part, i) => {
+      if (part.startsWith('___') && part.endsWith('_START___')) {
+        currentType = part.slice(3, -9); // Extract the type name
+      } else if (part.startsWith('___') && part.endsWith('_END___')) {
+        currentType = '';
+      } else if (part) {
+        if (currentType) {
+          result.push(<span key={`${index}-${i}`} className={`code-${currentType.toLowerCase()}`}>{part}</span>);
+        } else {
+          result.push(<span key={`${index}-${i}`}>{part}</span>);
+        }
+      }
+    });
+    
+    return <div key={index}>{result}</div>;
   });
 };
 
