@@ -78,22 +78,35 @@ const HowItWorksSection = () => {
             description="Users authenticate with FaceID or fingerprint via their device's secure enclave."
           >
             <div className="flex justify-center">
-              <div className="flex items-center bg-neutral-100 p-2 sm:p-3 rounded-lg">
-                <Fingerprint className="text-accent text-xl sm:text-2xl mr-2" />
-                <span className="text-xs sm:text-sm">or</span>
-                <svg
-                  className="text-accent h-5 w-5 sm:h-6 sm:w-6 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
+              <div className="flex items-center bg-gradient-to-r from-purple-50 to-white p-2 sm:p-3 rounded-lg border border-purple-100 shadow-md">
+                <div className="relative mr-2">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-violet-500 to-purple-400 rounded-full blur-[1px]"></div>
+                  <Fingerprint className="text-xl sm:text-2xl relative z-10 text-transparent bg-clip-text bg-gradient-to-br from-purple-600 via-violet-500 to-purple-400" />
+                </div>
+                <span className="text-xs sm:text-sm font-semibold text-violet-600">or</span>
+                <div className="relative ml-2">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-violet-500 to-purple-400 rounded-full blur-[1px]"></div>
+                  <svg
+                    className="h-5 w-5 sm:h-6 sm:w-6 relative z-10"
+                    fill="none"
+                    stroke="url(#eye-gradient)"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <linearGradient id="eye-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#9945FF" />
+                        <stop offset="50%" stopColor="#8A5CF6" />
+                        <stop offset="100%" stopColor="#9945FF" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </div>
               </div>
             </div>
           </Step>
@@ -106,9 +119,11 @@ const HowItWorksSection = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="inline-block bg-neutral-100 rounded-full px-4 sm:px-6 py-2 sm:py-3 font-medium text-sm sm:text-base">
+          <div className="inline-block bg-gradient-to-r from-purple-50 to-white rounded-full px-4 sm:px-6 py-2 sm:py-3 font-medium text-sm sm:text-base shadow-md border border-purple-100">
             <CheckCircle className="inline-block text-success mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-            Authenticated and ready to use Solana dApps!
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-violet-500 font-semibold">
+              Authenticated and ready to use Solana dApps!
+            </span>
           </div>
         </motion.div>
 

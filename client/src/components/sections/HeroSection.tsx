@@ -72,7 +72,7 @@ const HeroSection = () => {
               {/* Authentication Visualization */}
               <div className="flex flex-col items-center">
                 <motion.div 
-                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white border border-neutral-200 flex items-center justify-center mb-4 sm:mb-6 shadow-md"
+                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-purple-50 to-white border border-purple-200 flex items-center justify-center mb-4 sm:mb-6 shadow-md"
                   animate={{ 
                     y: [0, -10, 0],
                     boxShadow: [
@@ -87,7 +87,10 @@ const HeroSection = () => {
                     repeatType: "reverse"
                   }}
                 >
-                  <Fingerprint className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-violet-500 to-purple-400 rounded-full blur-[1px]"></div>
+                    <Fingerprint className="h-6 w-6 sm:h-8 sm:w-8 relative z-10 text-transparent bg-clip-text bg-gradient-to-br from-purple-600 via-violet-500 to-purple-400" />
+                  </div>
                 </motion.div>
                 {/* Code representation */}
                 <div className="w-full overflow-x-auto">
