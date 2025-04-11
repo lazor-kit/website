@@ -20,12 +20,13 @@ export const LogoIcon: React.FC<LogoIconProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Outline Z based on the _CaAuTmm_400x400.jpg image */}
+      {/* Exact Z outline from the image */}
       <path
         d="M83 85L276 85L317 132L212 192L317 255L276 315L83 315L125 255L229 196L125 132L83 85Z"
         stroke={color}
-        strokeWidth="8"
+        strokeWidth="6"
         fill="none"
+        strokeLinejoin="round"
       />
     </svg>
   );
