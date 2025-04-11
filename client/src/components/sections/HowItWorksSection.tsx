@@ -13,31 +13,38 @@ interface StepProps {
 }
 
 const Step = ({ number, title, description, code, children }: StepProps) => (
-  <motion.div
-    className="relative pb-6 sm:pb-0"
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    whileHover={{ 
-      y: -5,
-      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-    }}
-    transition={{ duration: 0.5 }}
-    viewport={{ once: true }}
-  >
-    <div className="absolute left-0 top-0 -ml-2 sm:-ml-3 mt-2 bg-gradient-to-br from-purple-500 to-accent rounded-full w-7 h-7 sm:w-9 sm:h-9 flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-md border-2 border-white">
-      {number}
-    </div>
-    <div className="bg-white rounded-xl border border-neutral-200 p-4 sm:p-6 ml-5 sm:ml-6">
-      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">{title}</h3>
-      <p className="text-sm sm:text-base text-neutral-400 mb-3 sm:mb-4">{description}</p>
-      {code && (
-        <div className="bg-neutral-100 p-2 sm:p-3 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
-          <pre><code>{code}</code></pre>
-        </div>
-      )}
-      {children}
-    </div>
-  </motion.div>
+  <div className="relative h-full">
+    <motion.div
+      className="relative h-full"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ 
+        y: -5
+      }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+    >
+      <div className="absolute left-0 top-0 -ml-2 sm:-ml-3 mt-2 bg-gradient-to-br from-purple-500 to-accent rounded-full w-7 h-7 sm:w-9 sm:h-9 flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-md border-2 border-white z-10">
+        {number}
+      </div>
+      <motion.div 
+        className="bg-white rounded-xl border border-neutral-200 p-4 sm:p-6 ml-5 sm:ml-6 h-full flex flex-col"
+        whileHover={{
+          boxShadow: "0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+          borderColor: "#9945FF40"
+        }}
+      >
+        <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">{title}</h3>
+        <p className="text-sm sm:text-base text-neutral-400 mb-3 sm:mb-4">{description}</p>
+        {code && (
+          <div className="bg-neutral-100 p-2 sm:p-3 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre><code>{code}</code></pre>
+          </div>
+        )}
+        {children && <div className="mt-auto">{children}</div>}
+      </motion.div>
+    </motion.div>
+  </div>
 );
 
 const HowItWorksSection = () => {
