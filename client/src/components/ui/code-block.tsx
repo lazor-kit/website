@@ -9,6 +9,30 @@ interface CodeBlockProps {
   fileName?: string;
 }
 
+// A simpler syntax highlighter function
+const highlightCode = (code: string) => {
+  const lines = code.split('\n');
+  
+  return lines.map((line, index) => {
+    // Apply basic syntax highlighting
+    let highlightedLine = line
+      // Highlight keywords
+      .replace(/\b(const|let|var|function|return|import|export|from|if|else|for|while|class|extends|async|await)\b/g, '<span style="color: #9d7cd8;">$1</span>')
+      // Highlight comments
+      .replace(/(\/\/.*$)/g, '<span style="color: #7c7f93;">$1</span>')
+      // Highlight strings with quotes
+      .replace(/(['"`])(.*?)(['"`])/g, '<span style="color: #a6da95;">$1$2$3</span>')
+      // Highlight function calls
+      .replace(/(\w+)(\s*\()/g, '<span style="color: #f5a97f;">$1</span>$2')
+      // Highlight numbers
+      .replace(/\b(\d+)\b/g, '<span style="color: #7dc4e4;">$1</span>');
+    
+    return (
+      <div key={index} dangerouslySetInnerHTML={{ __html: highlightedLine }} />
+    );
+  });
+};
+
 export function CodeBlock({
   children,
   showLineNumbers = false,
@@ -56,7 +80,12 @@ export function CodeBlock({
         )}
         
         <pre className={`${showLineNumbers ? 'pl-8' : ''} whitespace-pre text-[#cdd6f4]`}>
-          <code>{codeText}</code>
+          <code>
+            {language === 'javascript' || language === 'js' || language === 'jsx' || language === 'ts' || language === 'tsx' 
+              ? highlightCode(codeText)
+              : codeText
+            }
+          </code>
         </pre>
       </div>
     </div>
