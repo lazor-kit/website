@@ -149,12 +149,12 @@ const DemoSection = () => {
                 <TabsTrigger value="sdk" className="text-xs sm:text-sm">dApps SDK</TabsTrigger>
               </TabsList>
               
-              <TabsContent value="secp256r1" className="border rounded-lg p-4 bg-neutral-50">
+              <TabsContent value="secp256r1" className="border border-neutral-700 rounded-lg p-4 bg-neutral-900">
                 <div className="flex items-center mb-3">
                   <ShieldCheck className="text-purple-600 mr-2 h-5 w-5" />
-                  <h4 className="font-semibold">Native Program for Secp256r1</h4>
+                  <h4 className="font-semibold text-white">Native Program for Secp256r1</h4>
                 </div>
-                <p className="text-sm text-neutral-500 mb-4">
+                <p className="text-sm text-neutral-300 mb-4">
                   Our custom native program verifies Secp256r1 signatures on-chain, enabling secure authentication using device biometrics.
                 </p>
                 <CodeBlock className="text-xs shadow-lg" withTerminal fileName="verify-signature.js" showLineNumbers>
@@ -171,12 +171,12 @@ const result = await sendAndConfirmTransaction(connection, tx, []);`}
                 </CodeBlock>
               </TabsContent>
               
-              <TabsContent value="relayer" className="border rounded-lg p-4 bg-neutral-50">
+              <TabsContent value="relayer" className="border border-neutral-700 rounded-lg p-4 bg-neutral-900">
                 <div className="flex items-center mb-3">
                   <Zap className="text-yellow-500 mr-2 h-5 w-5" />
-                  <h4 className="font-semibold">Relayer for Gasless Transactions</h4>
+                  <h4 className="font-semibold text-white">Relayer for Gasless Transactions</h4>
                 </div>
-                <p className="text-sm text-neutral-500 mb-4">
+                <p className="text-sm text-neutral-300 mb-4">
                   Our relayer infrastructure enables gasless transactions, allowing users to interact with dApps without holding SOL for fees.
                 </p>
                 <CodeBlock className="text-xs shadow-lg" withTerminal fileName="relayer-transaction.js" showLineNumbers>
@@ -193,12 +193,12 @@ console.log("Transaction sent:", result.signature);`}
                 </CodeBlock>
               </TabsContent>
               
-              <TabsContent value="pda" className="border rounded-lg p-4 bg-neutral-50">
+              <TabsContent value="pda" className="border border-neutral-700 rounded-lg p-4 bg-neutral-900">
                 <div className="flex items-center mb-3">
                   <Server className="text-blue-500 mr-2 h-5 w-5" />
-                  <h4 className="font-semibold">Program for Handle PDA</h4>
+                  <h4 className="font-semibold text-white">Program for Handle PDA</h4>
                 </div>
-                <p className="text-sm text-neutral-500 mb-4">
+                <p className="text-sm text-neutral-300 mb-4">
                   Our PDA program manages wallet accounts on-chain, providing a secure and programmable wallet experience.
                 </p>
                 <CodeBlock className="text-xs shadow-lg" withTerminal fileName="pda-wallet.js" showLineNumbers>
@@ -222,12 +222,12 @@ const tx = await program.methods
                 </CodeBlock>
               </TabsContent>
               
-              <TabsContent value="sdk" className="border rounded-lg p-4 bg-neutral-50">
+              <TabsContent value="sdk" className="border border-neutral-700 rounded-lg p-4 bg-neutral-900">
                 <div className="flex items-center mb-3">
                   <Code className="text-green-500 mr-2 h-5 w-5" />
-                  <h4 className="font-semibold">SDK for dApps</h4>
+                  <h4 className="font-semibold text-white">SDK for dApps</h4>
                 </div>
-                <p className="text-sm text-neutral-500 mb-4">
+                <p className="text-sm text-neutral-300 mb-4">
                   Our SDK provides developers with an easy integration path for implementing Lazor.kit authentication.
                 </p>
                 <CodeBlock className="text-xs shadow-lg" withTerminal fileName="sdk-integration.js" showLineNumbers>
