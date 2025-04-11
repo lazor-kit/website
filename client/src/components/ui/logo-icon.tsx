@@ -15,15 +15,17 @@ export const LogoIcon: React.FC<LogoIconProps> = ({
     <svg
       width={size}
       height={size}
-      viewBox="0 0 240 240"
+      viewBox="0 0 400 400"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Stylized Z based on provided image */}
+      {/* Outline Z based on the _CaAuTmm_400x400.jpg image */}
       <path
-        d="M30 60L170 60L210 110L150 110L150 140L90 140L90 170L210 170L170 220L30 220L70 170L130 170L130 140L190 140L190 110L70 110L30 60Z"
-        fill={color}
+        d="M83 85L276 85L317 132L212 192L317 255L276 315L83 315L125 255L229 196L125 132L83 85Z"
+        stroke={color}
+        strokeWidth="8"
+        fill="none"
       />
     </svg>
   );
