@@ -14,7 +14,9 @@ export const LogoIcon: React.FC<LogoIconProps> = ({
   const logoStyle = {
     width: size,
     height: size,
-    objectFit: "contain" as "contain"
+    objectFit: "contain" as "contain",
+    borderRadius: "24%",  // Adding rounded corners
+    overflow: "hidden"
   };
 
   // Using the logo.png file directly from the public directory
