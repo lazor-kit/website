@@ -1,5 +1,5 @@
 import React from "react";
-import zLogo from "@assets/_CaAuTmm_400x400.jpg";
+import logoImage from "@assets/Logo-app.png";
 
 interface LogoIconProps {
   size?: number;
@@ -21,8 +21,8 @@ export const LogoIcon: React.FC<LogoIconProps> = ({
 
   return (
     <img 
-      src={zLogo} 
-      alt="Z Logo" 
+      src={logoImage} 
+      alt="Logo" 
       style={logoStyle}
       className={className}
     />
