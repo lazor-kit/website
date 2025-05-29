@@ -2,24 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Code highlighting styles */
+/* Code highlighting styles - Light theme */
 .code-keyword {
-  color: #9d7cd8;
+  color: #8b5cf6;
+  font-weight: 600;
 }
 .code-comment {
-  color: #7c7f93;
+  color: #6b7280;
+  font-style: italic;
 }
 .code-string {
-  color: #a6da95;
+  color: #059669;
 }
 .code-function {
-  color: #f5a97f;
+  color: #dc2626;
 }
 .code-number {
-  color: #7dc4e4;
+  color: #2563eb;
 }
 .code-variable {
-  color: #cdd6f4;
+  color: #374151;
 }
 
 @layer base {
