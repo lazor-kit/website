@@ -5,7 +5,6 @@ import ProblemSolutionSection from "@/components/sections/ProblemSolutionSection
 import DemoSection from "@/components/sections/DemoSection";
 import EcosystemSection from "@/components/sections/EcosystemSection";
 import ComparisonSection from "@/components/sections/ComparisonSection";
-import PartnersSection from "@/components/sections/PartnersSection";
 import CTASection from "@/components/sections/CTASection";
 
 const Home = () => {
@@ -18,7 +17,6 @@ const Home = () => {
       <DemoSection />
       <EcosystemSection />
       <ComparisonSection />
-      <PartnersSection />
       <CTASection />
     </>
   );

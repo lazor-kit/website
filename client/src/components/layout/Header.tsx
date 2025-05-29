@@ -137,9 +137,15 @@ const Header = () => {
                 <Mail className="h-5 w-5" />
               </a>
             </div>
-            <Button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-neutral-700 transition-colors">
-              Get Started
-            </Button>
+            <a 
+              href="https://www.npmjs.com/package/@lazorkit/wallet" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-neutral-700 transition-colors">
+                Get Started
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -233,9 +239,16 @@ const Header = () => {
                 </a>
               </div>
               
-              <Button className="w-full mt-4 bg-primary text-white rounded-md font-medium hover:bg-neutral-700">
-                Get Started
-              </Button>
+              <a 
+                href="https://www.npmjs.com/package/@lazorkit/wallet" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Button className="w-full mt-4 bg-primary text-white rounded-md font-medium hover:bg-neutral-700">
+                  Get Started
+                </Button>
+              </a>
             </div>
           </motion.div>
         )}

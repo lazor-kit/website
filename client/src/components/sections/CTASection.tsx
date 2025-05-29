@@ -28,9 +28,16 @@ const CTASection = () => {
                 Get started with Lazor.kit today and provide your users with the fastest, simplest, and most secure sign-in experience on Solana.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button className="w-full sm:w-auto px-4 sm:px-6 py-5 sm:py-6 bg-primary text-white rounded-lg font-medium hover:bg-neutral-700 transition-colors h-10 sm:h-12 text-sm sm:text-base">
-                  Get Started Today
-                </Button>
+                <a 
+                  href="https://www.npmjs.com/package/@lazorkit/wallet" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
+                >
+                  <Button className="w-full px-4 sm:px-6 py-5 sm:py-6 bg-primary text-white rounded-lg font-medium hover:bg-neutral-700 transition-colors h-10 sm:h-12 text-sm sm:text-base">
+                    Get Started Today
+                  </Button>
+                </a>
                 <Button variant="outline" className="w-full sm:w-auto px-4 sm:px-6 py-5 sm:py-6 border border-neutral-200 rounded-lg font-medium hover:bg-neutral-100 transition-colors h-10 sm:h-12 mt-2 sm:mt-0 text-sm sm:text-base">
                   View Documentation
                 </Button>
@@ -42,13 +49,13 @@ const CTASection = () => {
             >
               <div className="overflow-x-auto">
                 <CodeBlock withTerminal>
-{`$ npm install @lazorkit/auth
+{`$ npm install @lazorkit/wallet
 
 # Installing dependencies...
 # Installation complete!
 
 $ cat index.js
-import { LazorKit } from '@lazorkit/auth';
+import { LazorKit } from '@lazorkit/wallet';
 
 const lazorKit = new LazorKit({
   apiKey: 'YOUR_API_KEY'

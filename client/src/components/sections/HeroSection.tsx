@@ -38,11 +38,18 @@ const HeroSection = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
               variants={slideIn("up", 0.3)}
             >
-              <Button 
-                className="px-6 py-6 bg-primary text-white rounded-lg font-medium hover:bg-neutral-700 transition-all flex items-center justify-center h-12 w-full sm:w-auto hover:scale-105"
+              <a 
+                href="https://www.npmjs.com/package/@lazorkit/wallet" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
               >
-                Get Started <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+                <Button 
+                  className="px-6 py-6 bg-primary text-white rounded-lg font-medium hover:bg-neutral-700 transition-all flex items-center justify-center h-12 w-full hover:scale-105"
+                >
+                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
               <Button 
                 variant="outline" 
                 className="px-6 py-6 border border-neutral-200 rounded-lg font-medium hover:bg-neutral-100 transition-all flex items-center justify-center h-12 w-full sm:w-auto hover:scale-105"
