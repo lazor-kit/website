@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Twitter, Mail } from "lucide-react";
 import { GradientText } from "@/components/ui/gradient-text";
 import { motion, AnimatePresence } from "framer-motion";
 import LogoIcon from "@/components/ui/logo-icon";
@@ -108,8 +108,35 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Get Started Button (Desktop) */}
-          <div className="hidden md:flex items-center">
+          {/* Social Links & Get Started Button (Desktop) */}
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
+              <a 
+                href="https://github.com/lazor-kit/lazor-kit" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-neutral-600 hover:text-purple-700 transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://x.com/acclazor" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-neutral-600 hover:text-purple-700 transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a 
+                href="mailto:dev-support@lazor.sh"
+                className="text-neutral-600 hover:text-purple-700 transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+            </div>
             <Button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-neutral-700 transition-colors">
               Get Started
             </Button>
@@ -176,6 +203,36 @@ const Header = () => {
               >
                 About Us
               </button>
+              
+              {/* Social Links (Mobile) */}
+              <div className="flex items-center justify-center space-x-6 mt-4 pt-4 border-t border-neutral-200">
+                <a 
+                  href="https://github.com/lazor-kit/lazor-kit" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 hover:text-purple-700 transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://x.com/acclazor" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 hover:text-purple-700 transition-colors"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="h-6 w-6" />
+                </a>
+                <a 
+                  href="mailto:dev-support@lazor.sh"
+                  className="text-neutral-600 hover:text-purple-700 transition-colors"
+                  aria-label="Email"
+                >
+                  <Mail className="h-6 w-6" />
+                </a>
+              </div>
+              
               <Button className="w-full mt-4 bg-primary text-white rounded-md font-medium hover:bg-neutral-700">
                 Get Started
               </Button>
