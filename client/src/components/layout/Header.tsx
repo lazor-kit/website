@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Github, Twitter, Mail } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Menu, X, Github, Twitter, Mail, MessageCircle, ExternalLink, Copy } from "lucide-react";
 import { GradientText } from "@/components/ui/gradient-text";
 import { motion, AnimatePresence } from "framer-motion";
 import LogoIcon from "@/components/ui/logo-icon";
@@ -10,6 +11,13 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -136,6 +144,60 @@ const Header = () => {
               >
                 <Mail className="h-5 w-5" />
               </a>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button
+                    className="text-neutral-600 hover:text-purple-700 transition-colors"
+                    aria-label="Contact Business Development"
+                  >
+                    <MessageCircle className="h-5 w-5" />
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle className="text-center">Connect with our Head of DevRel BD</DialogTitle>
+                  </DialogHeader>
+                  <div className="flex flex-col items-center space-y-6 p-6">
+                    <div className="text-center">
+                      <h3 className="text-lg font-semibold mb-2">Metasal</h3>
+                      <p className="text-neutral-600 text-sm">Head of Developer Relations & Business Development</p>
+                    </div>
+                    
+                    <div className="w-48 h-48 bg-white rounded-lg p-4 border-2 border-neutral-200">
+                      <img 
+                        src="/metasal-qr.png" 
+                        alt="Metasal Telegram QR Code" 
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    
+                    <div className="flex flex-col space-y-3 w-full">
+                      <div className="flex items-center justify-between bg-neutral-50 rounded-lg p-3">
+                        <span className="text-sm font-mono">@metasal</span>
+                        <button
+                          onClick={() => copyToClipboard("@metasal")}
+                          className="text-purple-600 hover:text-purple-700 transition-colors"
+                        >
+                          {copied ? "Copied!" : <Copy className="h-4 w-4" />}
+                        </button>
+                      </div>
+                      
+                      <a
+                        href="https://t.me/metasal"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full"
+                      >
+                        <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
+                          <MessageCircle className="h-4 w-4 mr-2" />
+                          Open in Telegram
+                          <ExternalLink className="h-4 w-4 ml-2" />
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
             <a 
               href="https://www.npmjs.com/package/@lazorkit/wallet" 
@@ -237,6 +299,60 @@ const Header = () => {
                 >
                   <Mail className="h-6 w-6" />
                 </a>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button
+                      className="text-neutral-600 hover:text-purple-700 transition-colors"
+                      aria-label="Contact Business Development"
+                    >
+                      <MessageCircle className="h-6 w-6" />
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md w-[90vw] max-h-[80vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-center text-lg">Connect with our Head of DevRel BD</DialogTitle>
+                    </DialogHeader>
+                    <div className="flex flex-col items-center space-y-4 p-4">
+                      <div className="text-center">
+                        <h3 className="text-lg font-semibold mb-1">Metasal</h3>
+                        <p className="text-neutral-600 text-sm">Head of Developer Relations & Business Development</p>
+                      </div>
+                      
+                      <div className="w-40 h-40 sm:w-48 sm:h-48 bg-white rounded-lg p-3 border-2 border-neutral-200">
+                        <img 
+                          src="/metasal-qr.png" 
+                          alt="Metasal Telegram QR Code" 
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      
+                      <div className="flex flex-col space-y-3 w-full">
+                        <div className="flex items-center justify-between bg-neutral-50 rounded-lg p-3">
+                          <span className="text-sm font-mono">@metasal</span>
+                          <button
+                            onClick={() => copyToClipboard("@metasal")}
+                            className="text-purple-600 hover:text-purple-700 transition-colors"
+                          >
+                            {copied ? <span className="text-xs">Copied!</span> : <Copy className="h-4 w-4" />}
+                          </button>
+                        </div>
+                        
+                        <a
+                          href="https://t.me/metasal"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full"
+                        >
+                          <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
+                            <MessageCircle className="h-4 w-4 mr-2" />
+                            Open in Telegram
+                            <ExternalLink className="h-4 w-4 ml-2" />
+                          </Button>
+                        </a>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
               
               <a 
