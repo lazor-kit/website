@@ -49,7 +49,7 @@ const CTASection = () => {
             >
               <div className="overflow-x-auto">
                 <CodeBlock withTerminal>
-{`$ npm install @lazorkit/wallet
+{`$npm install @lazorkit/wallet
 
 # Installing dependencies...
 # Installation complete!
