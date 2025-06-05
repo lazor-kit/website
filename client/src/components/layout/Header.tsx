@@ -150,7 +150,7 @@ const Header = () => {
                     className="text-neutral-600 hover:text-purple-700 transition-colors"
                     aria-label="Contact Business Development"
                   >
-                    <MessageCircle className="h-5 w-5" />
+                    <img src="/telegram-icon.png" alt="Telegram" className="h-5 w-5" />
                   </button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-md">
@@ -305,7 +305,7 @@ const Header = () => {
                       className="text-neutral-600 hover:text-purple-700 transition-colors"
                       aria-label="Contact Business Development"
                     >
-                      <MessageCircle className="h-6 w-6" />
+                      <img src="/telegram-icon.png" alt="Telegram" className="h-6 w-6" />
                     </button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-md w-[90vw] max-h-[80vh] overflow-y-auto">
