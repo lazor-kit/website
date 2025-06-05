@@ -74,6 +74,7 @@ const Footer = () => {
               <li><Link href="/" className="text-neutral-400 hover:text-purple-700 transition-colors text-xs sm:text-sm">Blog</Link></li>
               <li><Link href="/" className="text-neutral-400 hover:text-purple-700 transition-colors text-xs sm:text-sm">Careers</Link></li>
               <li><Link href="/" className="text-neutral-400 hover:text-purple-700 transition-colors text-xs sm:text-sm">Contact</Link></li>
+              <li><a href="https://t.me/metasal" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-purple-700 transition-colors text-xs sm:text-sm">Business Development</a></li>
             </ul>
           </div>
         </div>
