@@ -37,7 +37,7 @@ const Step = ({ number, title, description, code, children }: StepProps) => (
         <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">{title}</h3>
         <p className="text-sm sm:text-base text-neutral-400 mb-3 sm:mb-4">{description}</p>
         {code && (
-          <CodeBlock className="text-xs" withTerminal>
+          <CodeBlock className="bg-[#1e1e3e] text-[#cdd6f4] text-xs" withTerminal>
             {code}
           </CodeBlock>
         )}
@@ -69,14 +69,21 @@ const HowItWorksSection = () => {
             number={1}
             title="Integrate Lazor.kit"
             description="Add our lightweight SDK to your application with a simple npm install."
-            code="npm install @lazorkit/auth"
+            code={`
+npm install @lazorkit/wallet
+# or
+yarn add @lazorkit/wallet
+`}
           />
 
           <Step
             number={2}
             title="Initialize Authentication"
             description="Add the authentication button to your application's login flow."
-            code="const wallet = await lazorKit.signIn();"
+            code={
+`const { signMessage, } = useWallet();
+await signMessage(base64EncodedMessage);
+`}
           />
 
           <Step
@@ -130,35 +137,69 @@ const HowItWorksSection = () => {
         >
           <div className="overflow-x-auto">
             <CodeBlock withTerminal fileName="full-implementation.js" showLineNumbers>
-{`import { LazorKit } from '@lazorkit/auth';
+{
+`import React from 'react';
+import { useWallet } from '@lazorkit/wallet';
 
-// Initialize Lazor.kit with your API key
-const lazorKit = new LazorKit({
-  apiKey: 'your_api_key',
-  network: 'mainnet'
-});
+const DApp = () => {
+  const {
+    credentialId,
+    publicKey,
+    isConnected,
+    isLoading,
+    error,
+    smartWalletAuthorityPubkey,
+    connect,
+    disconnect,
+    signMessage,
+  } = useWallet();
 
-// Handle user sign-in
-async function handleSignIn() {
-  try {
-    // Authenticate user with biometrics
-    const wallet = await lazorKit.signIn();
-    
-    // Access the user's Solana wallet
-    console.log('User authenticated!');
-    console.log('Wallet address:', wallet.address);
-    
-    // Execute a transaction
-    const transaction = await wallet.sendTransaction({
-      to: 'destination_address',
-      amount: 0.1,
-    });
-    
-    console.log('Transaction sent:', transaction.signature);
-  } catch (error) {
-    console.error('Authentication failed:', error);
-  }
-}`}
+  const handleConnect = async () => {
+    try {
+      await connect();
+      console.log('Wallet connected:', smartWalletAuthorityPubkey);
+    } catch (err) {
+      console.error('Failed to connect wallet:', err);
+    }
+  };
+
+  const handleDisconnect = () => {
+    disconnect();
+    console.log('Wallet disconnected');
+  };
+
+  const handleSignMessage = async () => {
+    try {
+      const instruction = {}; // Replace with a valid TransactionInstruction
+      const txid = await signMessage(instruction);
+      console.log('Transaction ID:', txid);
+    } catch (err) {
+      console.error('Failed to sign message:', err);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Lazor Kit Wallet Integration</h1>
+      {isConnected ? (
+        <div>
+          <p>Connected Wallet: {smartWalletAuthorityPubkey}</p>
+          <button onClick={handleDisconnect}>Disconnect</button>
+          <button onClick={handleSignMessage}>Sign Message</button>
+        </div>
+      ) : (
+        <div>
+          <button onClick={handleConnect} disabled={isLoading}>
+            {isLoading ? 'Connecting...' : 'Connect Wallet'}
+          </button>
+        </div>
+      )}
+      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+    </div>
+  );
+};
+
+export default DApp;`}
             </CodeBlock>
           </div>
         </motion.div>
