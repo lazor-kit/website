@@ -100,8 +100,10 @@ const HeroSection = () => {
                 <div className="w-full overflow-x-auto">
                   <CodeBlock withTerminal fileName="authentication.js" showLineNumbers>
 {`// Easy authentication with Lazor.kit
-const userWallet = await lazorKit.signIn();
-console.log("Authenticated!", userWallet.address);`}
+const instruction = {}; // Replace with a valid TransactionInstruction
+const txid = await signMessage(instruction);
+console.log('Transaction ID:', txid);
+`}
                   </CodeBlock>
                 </div>
                 {/* Success state */}

@@ -168,6 +168,8 @@ const Header = () => {
                         src="/metasal-qr.png" 
                         alt="Metasal Telegram QR Code" 
                         className="w-full h-full object-contain"
+                        loading="eager"
+                        decoding="async"
                       />
                     </div>
                     
@@ -323,6 +325,8 @@ const Header = () => {
                           src="/metasal-qr.png" 
                           alt="Metasal Telegram QR Code" 
                           className="w-full h-full object-contain"
+                          loading="eager"
+                          decoding="async"
                         />
                       </div>
                       

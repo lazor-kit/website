@@ -37,7 +37,7 @@ const Step = ({ number, title, description, code, children }: StepProps) => (
         <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">{title}</h3>
         <p className="text-sm sm:text-base text-neutral-400 mb-3 sm:mb-4">{description}</p>
         {code && (
-          <CodeBlock className="bg-[#1e1e3e] text-[#cdd6f4] text-xs" withTerminal>
+          <CodeBlock className="bg-[#1e1e3e] text-[#cdd6f4] text-xs" withTerminal language={number === 1 ? "bash" : "javascript"}>
             {code}
           </CodeBlock>
         )}
