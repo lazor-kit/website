@@ -25,7 +25,7 @@ const CTASection = () => {
                 Ready to simplify your Solana authentication?
               </h2>
               <p className="text-sm sm:text-base text-neutral-400 mb-6 sm:mb-8">
-                Get started with Lazor.kit today and provide your users with the fastest, simplest, and most secure sign-in experience on Solana.
+                Get started with LazorKit today and provide your users with the fastest, simplest, and most secure sign-in experience on Solana.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button className="w-full sm:w-auto px-4 sm:px-6 py-5 sm:py-6 bg-primary text-white rounded-lg font-medium hover:bg-neutral-700 transition-colors h-10 sm:h-12 text-sm sm:text-base">
@@ -42,7 +42,7 @@ const CTASection = () => {
             >
               <div className="overflow-x-auto">
                 <CodeBlock withTerminal>
-{`$ npm install @lazorkit/auth
+                  {`$ npm install @lazorkit/auth
 
 # Installing dependencies...
 # Installation complete!
@@ -62,7 +62,7 @@ document.getElementById('login').addEventListener('click', async () => {
 $ npm start
 
 Server running at http://localhost:3000
-✨ Your Lazor.kit integration is ready!`}
+✨ Your LazorKit integration is ready!`}
                 </CodeBlock>
               </div>
             </motion.div>

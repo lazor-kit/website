@@ -12,7 +12,7 @@ const HeroSection = () => {
     <section id="home" className="pt-24 pb-12 md:pt-32 md:pb-24 relative overflow-hidden">
       {/* Floating particles background */}
       <FloatingParticles className="opacity-30" />
-      
+
       <Container className="relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           {/* Hero Content */}
@@ -38,13 +38,13 @@ const HeroSection = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
               variants={slideIn("up", 0.3)}
             >
-              <Button 
+              <Button
                 className="px-6 py-6 bg-primary text-white rounded-lg font-medium hover:bg-neutral-700 transition-all flex items-center justify-center h-12 w-full sm:w-auto hover:scale-105"
               >
                 Get Started <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="px-6 py-6 border border-neutral-200 rounded-lg font-medium hover:bg-neutral-100 transition-all flex items-center justify-center h-12 w-full sm:w-auto hover:scale-105"
               >
                 View Documentation
@@ -71,9 +71,9 @@ const HeroSection = () => {
             <div className="relative bg-neutral-100 rounded-xl p-4 sm:p-6 md:p-8 border border-neutral-200 mx-4 md:mx-0 shadow-lg">
               {/* Authentication Visualization */}
               <div className="flex flex-col items-center">
-                <motion.div 
+                <motion.div
                   className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-purple-50 to-white border border-purple-200 flex items-center justify-center mb-4 sm:mb-6 shadow-md"
-                  animate={{ 
+                  animate={{
                     y: [0, -10, 0],
                     boxShadow: [
                       "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
@@ -81,7 +81,7 @@ const HeroSection = () => {
                       "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
                     ]
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 2,
                     repeat: Infinity,
                     repeatType: "reverse"
@@ -92,13 +92,13 @@ const HeroSection = () => {
                 {/* Code representation */}
                 <div className="w-full overflow-x-auto">
                   <CodeBlock withTerminal fileName="authentication.js" showLineNumbers>
-{`// Easy authentication with Lazor.kit
+                    {`// Easy authentication with LazorKit
 const userWallet = await lazorKit.signIn();
 console.log("Authenticated!", userWallet.address);`}
                   </CodeBlock>
                 </div>
                 {/* Success state */}
-                <motion.div 
+                <motion.div
                   className="w-full bg-white rounded-lg p-2 sm:p-4 border border-success flex flex-wrap sm:flex-nowrap items-center mt-4 text-sm sm:text-base"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}

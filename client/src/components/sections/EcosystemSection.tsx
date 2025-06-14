@@ -16,7 +16,7 @@ const EcosystemSection = () => {
           variants={fadeIn}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-            The <GradientText>Lazor.kit</GradientText> Ecosystem
+            The <GradientText>LazorKit</GradientText> Ecosystem
           </h2>
           <p className="text-sm sm:text-base text-neutral-500 max-w-2xl mx-auto">
             Our comprehensive solution extends across the entire Solana
@@ -48,7 +48,7 @@ const EcosystemSection = () => {
                   </div>
                   <h4 className="font-semibold mb-2">dApp</h4>
                   <p className="text-xs text-neutral-500">
-                    User-facing application that integrates with Lazor.kit SDK
+                    User-facing application that integrates with LazorKit SDK
                   </p>
                 </div>
 

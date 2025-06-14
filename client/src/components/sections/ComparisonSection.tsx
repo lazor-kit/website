@@ -47,7 +47,7 @@ const ComparisonSection = () => {
       </div>
       <div className="grid grid-cols-2 divide-x divide-neutral-200">
         <div className="px-4 py-3">
-          <div className="text-xs text-neutral-400 mb-1">Lazor.kit</div>
+          <div className="text-xs text-neutral-400 mb-1">LazorKit</div>
           <div className="text-success text-sm">
             {feature.lazorKit.icon} {feature.lazorKit.text}
           </div>
@@ -72,9 +72,9 @@ const ComparisonSection = () => {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Why Choose Lazor.kit?</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Why Choose LazorKit?</h2>
           <p className="text-sm sm:text-base text-neutral-400 max-w-2xl mx-auto">
-            See how Lazor.kit compares to traditional Solana wallet authentication methods.
+            See how LazorKit compares to traditional Solana wallet authentication methods.
           </p>
         </motion.div>
 
@@ -98,7 +98,7 @@ const ComparisonSection = () => {
               <tr className="bg-neutral-100">
                 <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-medium">Features</th>
                 <th className="px-3 sm:px-6 py-3 sm:py-4 text-center text-xs sm:text-sm font-medium">
-                  <GradientText className="font-bold">Lazor.kit</GradientText>
+                  <GradientText className="font-bold">LazorKit</GradientText>
                 </th>
                 <th className="px-3 sm:px-6 py-3 sm:py-4 text-center text-xs sm:text-sm font-medium">Traditional Wallet Apps</th>
               </tr>

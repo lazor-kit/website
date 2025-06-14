@@ -39,7 +39,7 @@ const Header = () => {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
+
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth"
@@ -49,9 +49,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-white"
-      } border-b border-neutral-200`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-white"
+        } border-b border-neutral-200`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -59,14 +58,14 @@ const Header = () => {
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 group">
               <div className="transition-transform group-hover:scale-105">
-                <LogoIcon 
-                  size={28} 
-                  color="#6C22C8" 
+                <LogoIcon
+                  size={28}
+                  color="#6C22C8"
                   className="drop-shadow-sm"
                 />
               </div>
               <span className="text-xl font-bold">
-                Lazor<GradientText>.kit</GradientText>
+                Lazor<GradientText>Kit</GradientText>
               </span>
             </Link>
           </div>
@@ -117,8 +116,8 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button 
-              type="button" 
+            <button
+              type="button"
               className="text-neutral-600 hover:text-purple-700 focus:outline-none transition-colors"
               onClick={toggleMenu}
               aria-label={isOpen ? "Close menu" : "Open menu"}

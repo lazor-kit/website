@@ -10,7 +10,7 @@ document.head.appendChild(fontLinks);
 
 // Add title
 const title = document.createElement('title');
-title.textContent = 'Lazor.kit - The Simplest Sign-in-with-Solana Solution';
+title.textContent = 'LazorKit - The Simplest Sign-in-with-Solana Solution';
 document.head.appendChild(title);
 
 createRoot(document.getElementById("root")!).render(<App />);

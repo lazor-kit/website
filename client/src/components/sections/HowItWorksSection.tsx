@@ -18,7 +18,7 @@ const Step = ({ number, title, description, code, children }: StepProps) => (
       className="relative h-full"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ 
+      whileHover={{
         y: -5
       }}
       transition={{ duration: 0.5 }}
@@ -27,7 +27,7 @@ const Step = ({ number, title, description, code, children }: StepProps) => (
       <div className="absolute left-0 top-0 -ml-2 sm:-ml-3 mt-2 bg-gradient-to-br from-purple-500 to-accent rounded-full w-7 h-7 sm:w-9 sm:h-9 flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-md border-2 border-white z-10">
         {number}
       </div>
-      <motion.div 
+      <motion.div
         className="bg-white rounded-xl border border-neutral-200 p-4 sm:p-6 ml-5 sm:ml-6 h-full flex flex-col"
         whileHover={{
           boxShadow: "0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
@@ -60,14 +60,14 @@ const HowItWorksSection = () => {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">How It Works</h2>
           <p className="text-sm sm:text-base text-neutral-400 max-w-2xl mx-auto">
-            Lazor.kit simplifies the Solana authentication process down to a few simple steps.
+            LazorKit simplifies the Solana authentication process down to a few simple steps.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 relative px-4 sm:px-0">
           <Step
             number={1}
-            title="Integrate Lazor.kit"
+            title="Integrate LazorKit"
             description="Add our lightweight SDK to your application with a simple npm install."
             code="npm install @lazorkit/auth"
           />
@@ -130,9 +130,9 @@ const HowItWorksSection = () => {
         >
           <div className="overflow-x-auto">
             <CodeBlock withTerminal fileName="full-implementation.js" showLineNumbers>
-{`import { LazorKit } from '@lazorkit/auth';
+              {`import { LazorKit } from '@lazorkit/auth';
 
-// Initialize Lazor.kit with your API key
+// Initialize LazorKit with your API key
 const lazorKit = new LazorKit({
   apiKey: 'your_api_key',
   network: 'mainnet'
