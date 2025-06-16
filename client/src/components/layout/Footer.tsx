@@ -11,13 +11,13 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-2 sm:col-span-2 md:col-span-1">
             <div className="flex items-center mb-4 sm:mb-6 gap-2">
-              <LogoIcon 
-                size={24} 
-                color="#6C22C8" 
+              <LogoIcon
+                size={24}
+                color="#6C22C8"
                 className="drop-shadow-sm"
               />
               <span className="text-lg sm:text-xl font-bold">
-                Lazor<GradientText>.kit</GradientText>
+                Lazor<GradientText>Kit</GradientText>
               </span>
             </div>
             <p className="text-sm sm:text-base text-neutral-400 mb-4">
@@ -40,7 +40,7 @@ const Footer = () => {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-              </a>
+              </a> 
             </div>
           </div>
 
@@ -81,12 +81,12 @@ const Footer = () => {
 
         <div className="border-t border-neutral-200 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center px-4 sm:px-0">
           <div className="text-neutral-400 text-xs sm:text-sm mb-4 md:mb-0 text-center md:text-left flex items-center gap-1 justify-center md:justify-start">
-            <LogoIcon 
-              size={14} 
-              color="#9CA3AF" 
+            <LogoIcon
+              size={14}
+              color="#9CA3AF"
               className="opacity-80"
             />
-            &copy; {new Date().getFullYear()} Lazor.kit. All rights reserved.
+            &copy; {new Date().getFullYear()} LazorKit. All rights reserved.
           </div>
           <div className="flex flex-wrap justify-center md:flex-nowrap md:justify-start space-x-4 sm:space-x-6">
             <Link href="/" className="text-neutral-400 hover:text-purple-700 transition-colors text-xs sm:text-sm">Privacy Policy</Link>

@@ -15,8 +15,8 @@ const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCardProps) 
     className="bg-white p-4 sm:p-6 rounded-xl border border-neutral-200 hover:shadow-lg transition-all"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
-    whileHover={{ 
-      y: -5, 
+    whileHover={{
+      y: -5,
       boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       borderColor: "#9945FF20"
     }}
@@ -77,7 +77,7 @@ const FeaturesSection = () => {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Key Features</h2>
           <p className="text-sm sm:text-base text-neutral-400 max-w-2xl mx-auto">
-            Lazor.kit delivers a seamless sign-in experience while maintaining enterprise-grade security.
+            LazorKit delivers a seamless sign-in experience while maintaining enterprise-grade security.
           </p>
         </motion.div>
 

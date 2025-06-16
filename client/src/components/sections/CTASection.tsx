@@ -25,7 +25,7 @@ const CTASection = () => {
                 Ready to simplify your Solana authentication?
               </h2>
               <p className="text-sm sm:text-base text-neutral-400 mb-6 sm:mb-8">
-                Get started with Lazor.kit today and provide your users with the fastest, simplest, and most secure sign-in experience on Solana.
+                Get started with LazorKit today and provide your users with the fastest, simplest, and most secure sign-in experience on Solana.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a 
@@ -69,7 +69,7 @@ document.getElementById('login').addEventListener('click', async () => {
 $ npm start
 
 Server running at http://localhost:3000
-✨ Your Lazor.kit integration is ready!`}
+✨ Your LazorKit integration is ready!`}
                 </CodeBlock>
               </div>
             </motion.div>

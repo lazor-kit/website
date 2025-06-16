@@ -36,7 +36,7 @@ const DemoSection = () => {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">See How It Works</h2>
           <p className="text-sm sm:text-base text-neutral-500 max-w-2xl mx-auto">
-            Experience our seamless authentication flow and explore the key technical components that power Lazor.kit.
+            Experience our seamless authentication flow and explore the key technical components that power LazorKit.
           </p>
         </motion.div>
 
@@ -50,19 +50,19 @@ const DemoSection = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-xl font-bold mb-4 text-center">Try the Authentication</h3>
-            
+
             <div className="bg-neutral-50 rounded-lg p-6 border border-neutral-200 flex flex-col items-center mb-6">
               {!isAuthenticated ? (
                 <>
                   <div className="w-16 h-16 rounded-full bg-white border border-neutral-200 flex items-center justify-center mb-6 shadow-md">
                     <Fingerprint className="h-8 w-8 text-purple-600" />
                   </div>
-                  
+
                   <p className="text-sm text-neutral-500 mb-6 text-center">
                     Click the button below to simulate our fast, secure authentication process
                   </p>
-                  
-                  <Button 
+
+                  <Button
                     onClick={handleAuthenticate}
                     disabled={isAuthenticating}
                     className="w-full"
@@ -75,7 +75,7 @@ const DemoSection = () => {
                     ) : (
                       <div className="flex items-center">
                         <Fingerprint className="h-4 w-4 mr-2" />
-                        Authenticate with Lazor.kit
+                        Authenticate with LazorKit
                       </div>
                     )}
                   </Button>
@@ -85,25 +85,25 @@ const DemoSection = () => {
                   <div className="w-16 h-16 rounded-full bg-green-50 border border-green-200 flex items-center justify-center mb-6 shadow-md">
                     <CheckCircle className="h-8 w-8 text-green-500" />
                   </div>
-                  
+
                   <div className="bg-white rounded-lg p-4 border border-green-200 w-full mb-6">
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-medium">Wallet Address</span>
                       <code className="text-xs bg-neutral-100 py-1 px-2 rounded">4zJ...8aFq</code>
                     </div>
-                    
+
                     <div className="flex justify-between items-center mt-3">
                       <span className="text-sm font-medium">Authentication Type</span>
                       <span className="text-xs bg-purple-100 text-purple-700 py-1 px-2 rounded">Passkey</span>
                     </div>
-                    
+
                     <div className="flex justify-between items-center mt-3">
                       <span className="text-sm font-medium">Timestamp</span>
                       <span className="text-xs">{new Date().toLocaleTimeString()}</span>
                     </div>
                   </div>
-                  
-                  <Button 
+
+                  <Button
                     onClick={handleReset}
                     variant="outline"
                     className="w-full"
@@ -113,11 +113,11 @@ const DemoSection = () => {
                 </>
               )}
             </div>
-            
+
             <div className="text-sm text-neutral-500 bg-neutral-100 p-4 rounded">
               <p className="mb-2 font-medium text-neutral-700">How it works:</p>
               <ol className="list-decimal pl-5 space-y-1">
-                <li>User clicks "Authenticate with Lazor.kit"</li>
+                <li>User clicks "Authenticate with LazorKit"</li>
                 <li>A passkey prompt appears (biometric authentication)</li>
                 <li>User authenticates with fingerprint/FaceID</li>
                 <li>A programmable wallet is created or accessed</li>
@@ -125,7 +125,7 @@ const DemoSection = () => {
               </ol>
             </div>
           </motion.div>
-          
+
           {/* Technical Components */}
           <motion.div
             className="bg-white rounded-xl border border-neutral-200 shadow-sm p-6"
@@ -135,9 +135,9 @@ const DemoSection = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-xl font-bold mb-4 text-center">Key Technical Components</h3>
-            
-            <Tabs 
-              defaultValue="secp256r1" 
+
+            <Tabs
+              defaultValue="secp256r1"
               value={selectedTab}
               onValueChange={setSelectedTab}
               className="w-full"
@@ -150,7 +150,7 @@ const DemoSection = () => {
                   <TabsTrigger value="sdk" className="text-xs sm:text-sm whitespace-nowrap px-1 sm:px-4">dApps SDK</TabsTrigger>
                 </TabsList>
               </div>
-              
+
               <TabsContent value="secp256r1" className="border border-neutral-700 rounded-lg p-3 sm:p-4 bg-neutral-900">
                 <div className="flex items-center mb-2 sm:mb-3">
                   <ShieldCheck className="text-purple-600 mr-2 h-4 sm:h-5 w-4 sm:w-5 flex-shrink-0" />
@@ -161,7 +161,7 @@ const DemoSection = () => {
                 </p>
                 <div className="overflow-x-auto -mx-2 px-2 sm:mx-0 sm:px-0">
                   <CodeBlock className="text-xs shadow-lg min-w-[280px] sm:min-w-0" withTerminal fileName="verify-signature.js" showLineNumbers>
-{`// Verify a Secp256r1 signature on-chain
+                    {`// Verify a Secp256r1 signature on-chain
 const tx = new Transaction();
 tx.add(
   secpProgram.verify({
@@ -174,7 +174,7 @@ const result = await sendAndConfirmTransaction(connection, tx, []);`}
                   </CodeBlock>
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="relayer" className="border border-neutral-700 rounded-lg p-3 sm:p-4 bg-neutral-900">
                 <div className="flex items-center mb-2 sm:mb-3">
                   <Zap className="text-yellow-500 mr-2 h-4 sm:h-5 w-4 sm:w-5 flex-shrink-0" />
@@ -185,7 +185,7 @@ const result = await sendAndConfirmTransaction(connection, tx, []);`}
                 </p>
                 <div className="overflow-x-auto -mx-2 px-2 sm:mx-0 sm:px-0">
                   <CodeBlock className="text-xs shadow-lg min-w-[280px] sm:min-w-0" withTerminal fileName="relayer-transaction.js" showLineNumbers>
-{`// Submit a transaction via the Lazor relayer
+                    {`// Submit a transaction via the Lazor relayer
 const transaction = await wallet.createTransaction({
   to: "destination_address",
   amount: 0.5,
@@ -198,7 +198,7 @@ console.log("Transaction sent:", result.signature);`}
                   </CodeBlock>
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="pda" className="border border-neutral-700 rounded-lg p-3 sm:p-4 bg-neutral-900">
                 <div className="flex items-center mb-2 sm:mb-3">
                   <Server className="text-blue-500 mr-2 h-4 sm:h-5 w-4 sm:w-5 flex-shrink-0" />
@@ -209,7 +209,7 @@ console.log("Transaction sent:", result.signature);`}
                 </p>
                 <div className="overflow-x-auto -mx-2 px-2 sm:mx-0 sm:px-0">
                   <CodeBlock className="text-xs shadow-lg min-w-[280px] sm:min-w-0" withTerminal fileName="pda-wallet.js" showLineNumbers>
-{`// Derive the user's PDA wallet address
+                    {`// Derive the user's PDA wallet address
 const [walletAddress] = await PublicKey.findProgramAddress(
   [
     Buffer.from("wallet"),
@@ -229,18 +229,18 @@ const tx = await program.methods
                   </CodeBlock>
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="sdk" className="border border-neutral-700 rounded-lg p-3 sm:p-4 bg-neutral-900">
                 <div className="flex items-center mb-2 sm:mb-3">
                   <Code className="text-green-500 mr-2 h-4 sm:h-5 w-4 sm:w-5 flex-shrink-0" />
                   <h4 className="font-semibold text-white text-sm sm:text-base overflow-hidden text-ellipsis">SDK for dApps</h4>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-300 mb-3 sm:mb-4">
-                  Our SDK provides developers with an easy integration path for implementing Lazor.kit authentication.
+                  Our SDK provides developers with an easy integration path for implementing LazorKit authentication.
                 </p>
                 <div className="overflow-x-auto -mx-2 px-2 sm:mx-0 sm:px-0">
                   <CodeBlock className="text-xs shadow-lg min-w-[280px] sm:min-w-0" withTerminal fileName="sdk-integration.js" showLineNumbers>
-{`// Initialize Lazor.kit in your application
+                    {`// Initialize LazorKit in your application
 import { LazorKit } from '@lazorkit/auth';
 
 const lazorKit = new LazorKit({
@@ -264,7 +264,7 @@ document.getElementById('login-button').addEventListener('click', async () => {
                 </div>
               </TabsContent>
             </Tabs>
-            
+
             <div className="mt-6 flex justify-center">
               <Button variant="outline" className="text-sm">
                 <a href="https://docs.lazorkit.com" target="_blank" rel="noopener noreferrer" className="flex items-center">
@@ -275,7 +275,7 @@ document.getElementById('login-button').addEventListener('click', async () => {
             </div>
           </motion.div>
         </div>
-        
+
         {/* Call to Action */}
         <motion.div
           className="text-center px-4"
@@ -285,10 +285,10 @@ document.getElementById('login-button').addEventListener('click', async () => {
           viewport={{ once: true }}
         >
           <p className="text-sm sm:text-base text-neutral-500 mb-6 max-w-2xl mx-auto">
-            Ready to integrate Lazor.kit's innovative authentication solution into your own application?
+            Ready to integrate LazorKit's innovative authentication solution into your own application?
           </p>
           <Button className="bg-primary text-white rounded-lg font-medium hover:bg-neutral-700 transition-all flex items-center justify-center mx-auto hover:scale-105">
-            Get Started with Lazor.kit <ArrowRight className="ml-2 h-4 w-4" />
+            Get Started with LazorKit <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </motion.div>
       </Container>
