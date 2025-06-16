@@ -99,7 +99,7 @@ const HeroSection = () => {
                 {/* Code representation */}
                 <div className="w-full overflow-x-auto">
                   <CodeBlock withTerminal fileName="authentication.js" showLineNumbers>
-{`// Easy authentication with Lazor.kit
+{`// Easy authentication with LazorKit
 const instruction = {}; // Replace with a valid TransactionInstruction
 const txid = await signMessage(instruction);
 console.log('Transaction ID:', txid);
