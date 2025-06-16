@@ -68,7 +68,7 @@ document.getElementById('login').addEventListener('click', async () => {
 
 $ npm start
 
-Server running at http://localhost:3000
+Server running at http://localhost:5000
 ✨ Your LazorKit integration is ready!`}
                 </CodeBlock>
               </div>
