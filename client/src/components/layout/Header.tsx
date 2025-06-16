@@ -128,7 +128,7 @@ const Header = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a 
-                href="https://x.com/acclazor" 
+                href="https://x.com/lazorkit" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-neutral-600 hover:text-purple-700 transition-colors"
@@ -285,7 +285,7 @@ const Header = () => {
                   <Github className="h-6 w-6" />
                 </a>
                 <a 
-                  href="https://x.com/acclazor" 
+                  href="https://x.com/lazorkit" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-neutral-600 hover:text-purple-700 transition-colors"
