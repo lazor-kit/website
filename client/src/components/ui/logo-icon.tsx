@@ -1,33 +1,21 @@
-import React from "react";
-
 interface LogoIconProps {
   size?: number;
-  color?: string; // Not used with image but kept for compatibility
   className?: string;
 }
 
-export const LogoIcon: React.FC<LogoIconProps> = ({ 
-  size = 24, 
-  color = "#7c3aed", // Not used but kept for compatibility
-  className = "" 
-}) => {
-  const logoStyle = {
-    width: size,
-    height: size,
-    objectFit: "contain" as "contain",
-    borderRadius: "24%",  // Adding rounded corners
-    overflow: "hidden"
-  };
-
-  // Using the logo.png file directly from the public directory
+export function LogoIcon({ size = 24, className }: LogoIconProps) {
   return (
-    <img 
-      src="/logo.png" 
-      alt="Logo" 
-      style={logoStyle}
-      className={className}
-    />
+    <picture>
+      <source srcSet="/brand/mark-dark.svg" media="(prefers-color-scheme: dark)" />
+      <img
+        src="/brand/mark-light.svg"
+        alt=""
+        width={size}
+        height={size}
+        className={className}
+      />
+    </picture>
   );
-};
+}
 
 export default LogoIcon;
