@@ -13,7 +13,6 @@ const Footer = () => {
             <div className="flex items-center mb-4 sm:mb-6 gap-2">
               <LogoIcon
                 size={24}
-                color="#6C22C8"
                 className="drop-shadow-sm"
               />
               <span className="text-lg sm:text-xl font-bold">
@@ -83,7 +82,6 @@ const Footer = () => {
           <div className="text-neutral-400 text-xs sm:text-sm mb-4 md:mb-0 text-center md:text-left flex items-center gap-1 justify-center md:justify-start">
             <LogoIcon
               size={14}
-              color="#9CA3AF"
               className="opacity-80"
             />
             &copy; {new Date().getFullYear()} LazorKit. All rights reserved.

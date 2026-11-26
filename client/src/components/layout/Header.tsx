@@ -68,7 +68,6 @@ const Header = () => {
               <div className="transition-transform group-hover:scale-105">
                 <LogoIcon
                   size={28}
-                  color="#6C22C8"
                   className="drop-shadow-sm"
                 />
               </div>
